@@ -1,0 +1,33 @@
+/* ================================================================
+  メインビジュアル
+   ================================================================ */
+
+.p-mainVisual {
+	position: relative;
+	height: 590px;
+	background-image: url(../../../image/fv-bgi_sp@2x.jpg);
+	background-position: center;
+	background-size: cover;
+
+	&__catch {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: $width-inner-sp;
+		height: 100px;
+		margin: auto;
+		border: solid 2px #fff;
+		transform: top -50% left -50%;
+
+		p {
+			line-height: 100px;
+			color: #fff;
+			font-weight: medium;
+			font-size: 3rem;
+			text-align: center;
+			letter-spacing: .05em;
+		}
+	}
+}
