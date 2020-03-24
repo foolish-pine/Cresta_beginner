@@ -1,0 +1,42 @@
+/* ================================================================
+  Contact
+   ================================================================ */
+
+.p-contact {
+	max-width: $width-inner-sp;
+	margin: 0 auto;
+	padding-top: 100px;
+
+
+	&__sectionTitle {
+		font-size: 2.4rem;
+		font-weight: bold;
+		line-height: 2;
+		letter-spacing: .1;
+		margin-bottom: 62px;
+	}
+
+	label {
+		font-family: "Hiragino Kaku Gothic ProN";
+	}
+
+	input {
+		width: 100%;
+		border: solid 1px $color-form-border;
+		margin-bottom: 22px;
+		line-height: 1.8;
+	}
+
+	&__messageArea {
+		margin-bottom: 28px;
+
+		input {
+			height: 171px;
+		}
+	}
+
+	&__button {
+		margin: 0 auto 50px;
+	}
+
+}

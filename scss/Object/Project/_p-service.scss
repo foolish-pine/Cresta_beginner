@@ -1,0 +1,25 @@
+/* ================================================================
+  Service
+   ================================================================ */
+
+.p-service {
+  padding-top: 150px;
+  margin: 0 auto;
+  max-width: $width-inner-sp;
+  
+  &__subTitle {
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    margin-bottom: 35px;
+  }
+
+  &__container {
+    margin-bottom: 40px;
+
+    img {
+      width: 100%;
+    }
+  }
+}

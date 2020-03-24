@@ -15,10 +15,10 @@
 
 		h1 {
 			color: #fff;
-			font-family: 'Roboto' sans-serif;
+			font-family: 'Roboto', sans-serif;
 			font-weight: medium;
 			font-size: 2.6rem;
-			letter-spacing: .05em;
+			letter-spacing: 0;
 		}
 	}
 
@@ -30,7 +30,7 @@
 		position: relative;
 		width: 25px;
 		height: 16px;
-		margin-top: 30px;
+		margin-top: 29px;
 	}
 
 	&__menuLine {
@@ -44,11 +44,11 @@
 		}
 
 		&:nth-child(2) {
-			top: 7px;
+			top: 8px;
 		}
 
 		&:last-child {
-			top: 14px;
+			top: 16px;
 		}
 	}
 }
