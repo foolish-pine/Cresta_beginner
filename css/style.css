@@ -267,8 +267,12 @@ img {
 }
 
 /* ================================================================
-  メインレイアウト
+  メインビジュアルレイアウト
    ================================================================ */
+.l-main {
+  width: 100%;
+}
+
 /* ================================================================
   フッターレイアウト
    ================================================================ */
@@ -290,11 +294,11 @@ img {
   ヘッダー
    ================================================================ */
 .p-header {
-  width: 100%;
-  height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  width: 100%;
+  height: 75px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -307,10 +311,10 @@ img {
 
 .p-header__logo h1 {
   color: #fff;
-  letter-spacing: 0.05em;
   font-family: 'Roboto' sans-serif;
   font-weight: medium;
   font-size: 2.6rem;
+  letter-spacing: .05em;
 }
 
 .p-header__nav {
@@ -341,4 +345,38 @@ img {
 
 .p-header__menuLine:last-child {
   top: 14px;
+}
+
+/* ================================================================
+  メインビジュアル
+   ================================================================ */
+.p-mainVisual {
+  position: relative;
+  height: 590px;
+  background-image: url(../../../image/fv-bgi_sp@2x.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.p-mainVisual__catch {
+  position: absolute;
+  width: calc((300/375) * 100%);
+  height: 100px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  -webkit-transform: top -50% left -50%;
+          transform: top -50% left -50%;
+  border: solid 2px #fff;
+}
+
+.p-mainVisual__catch p {
+  text-align: center;
+  line-height: 100px;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: medium;
+  letter-spacing: .05em;
 }
