@@ -17,22 +17,24 @@
 <body ontouchstart="">
   <header class="l-header">
     <div class="p-header">
-      <div class="p-header__logo">
-        <h1>クリ★スタ</h1>
+      <div class="p-header__inner">
+        <div class="p-header__logo">
+          <h1>クリ★スタ</h1>
+        </div>
+        <nav class="p-header__nav">
+          <ul class="p-header__list">
+            <li class="p-header__item"><a href="">About</a></li>
+            <li class="p-header__item"><a href="">Service</a></li>
+            <li class="p-header__item"><a href="">News</a></li>
+            <li class="p-header__item"><a href="">Contact</a></li>
+          </ul>
+        </nav>
+        <a class="p-header__menu">
+          <span class="p-header__menuLine"></span>
+          <span class="p-header__menuLine"></span>
+          <span class="p-header__menuLine"></span>
+        </a>
       </div>
-      <nav class="p-header__nav">
-        <ul class="p-header__list">
-          <li class="p-header__item"><a href="">About</a></li>
-          <li class="p-header__item"><a href="">Service</a></li>
-          <li class="p-header__item"><a href="">News</a></li>
-          <li class="p-header__item"><a href="">Contact</a></li>
-        </ul>
-      </nav>
-      <a class="p-header__menu">
-        <span class="p-header__menuLine"></span>
-        <span class="p-header__menuLine"></span>
-        <span class="p-header__menuLine"></span>
-      </a>
     </div>
   </header>
   <main class="l-main">
@@ -42,93 +44,109 @@
       </div>
     </section>
     <section class="p-about">
-      <h2 class="c-text__sectionTitle">About</h2>
-      <h3 class="c-text__sectionSubTitle">
-        ミニマルで<br>
-        洗練されたデザインを。
-      </h3>
-      <p class="c-text">
-        近年、ミニマルなデザインが流行しています。そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。もちろん全てのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行なった上でご提案させて頂きます。
-      </p>
+      <div class="p-about__inner">
+        <h2 class="c-text__sectionTitle">About</h2>
+        <h3 class="c-text__sectionSubTitle">
+          ミニマルで<br>
+          洗練されたデザインを。
+        </h3>
+        <p class="c-text">
+          近年、ミニマルなデザインが流行しています。そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。もちろん全てのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行なった上でご提案させて頂きます。
+        </p>
+      </div>
     </section>
     <section class="p-service">
-      <h2 class="c-text__sectionTitle">Service</h2>
-      <div class="p-service__container">
-        <h3 class="c-text__sectionSubTitle">
-          リリース時のサポートでサービスのブランディングを
-        </h3>
-        <p class="c-text">
-          弊社では、リリース時もサポートさせて頂きます。プレスリリース用のサイトや動画制作を通して、サービスのブランディングを行わせて頂きます。
-        </p>
-        <img src="image/service-image@2x.jpg" alt="">
-      </div>
-      <div>
-        <h3 class="c-text__sectionSubTitle">
-          リリース後のサポートで効果を最大化させる
-        </h3>
-        <p class="c-text">
-          弊社では、リリース後もサポートさせて頂きます。サービスはリリース後に様々な課題にぶつかります。そこでクライアント様と一緒に改善を行うことで、デザインの効果を最大化させます。
-        </p>
-        <img src="image/service-image02@2x.jpg" alt="">
+      <div class="p-service__inner">
+        <h2 class="c-text__sectionTitle">Service</h2>
+        <div class="p-service__container">
+          <div class="p-service__textContainer">
+            <h3 class="p-service__subTitle c-text__sectionSubTitle">
+              リリース時のサポートで<br>
+              サービスのブランディングを
+            </h3>
+            <p class="p-service__text c-text">
+              弊社では、リリース時もサポートさせて頂きます。プレスリリース用のサイトや動画制作を通して、サービスのブランディングを行わせて頂きます。
+            </p>
+          </div>
+          <img src="image/service-image@2x.jpg" alt="">
+        </div>
+        <div class="p-service__container">
+          <div class="p-service__textContainer">
+            <h3 class="p-service__subTitle c-text__sectionSubTitle">
+              リリース後のサポートで<br>
+              効果を最大化させる
+            </h3>
+            <p class="p-service__text c-text">
+              弊社では、リリース後もサポートさせて頂きます。サービスはリリース後に様々な課題にぶつかります。そこでクライアント様と一緒に改善を行うことで、デザインの効果を最大化させます。
+            </p>
+          </div>
+          <img src="image/service-image02@2x.jpg" alt="">
+        </div>
       </div>
     </section>
     <section class="p-news">
-      <h2 class="c-text__sectionTitle">News</h2>
-      <div class="p-news__container">
-        <div class="c-card">
-          <div class="c-card__image">
-            <img src="image/card-image1@2x.jpg" alt="">
+      <div class="p-news__inner">
+        <h2 class="c-text__sectionTitle">News</h2>
+        <div class="p-news__container">
+          <div class="p-news__card c-card">
+            <div class="c-card__image">
+              <img src="image/card-image1@2x.jpg" alt="">
+            </div>
+            <p class="c-card__text">
+              新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+            </p>
           </div>
-          <p class="c-card__text">
-            新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
-          </p>
-        </div>
-        <div class="c-card">
-          <div class="c-card__image">
-            <img src="image/card-image2@2x.jpg" alt="">
+          <div class="p-news__card c-card">
+            <div class="c-card__image">
+              <img src="image/card-image2@2x.jpg" alt="">
+            </div>
+            <p class="c-card__text">
+              新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+            </p>
           </div>
-          <p class="c-card__text">
-            新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
-          </p>
-        </div>
-        <div class="c-card">
-          <div class="c-card__image">
-            <img src="image/card-image3@2x.jpg" alt="">
+          <div class="p-news__card c-card">
+            <div class="c-card__image">
+              <img src="image/card-image3@2x.jpg" alt="">
+            </div>
+            <p class="c-card__text">
+              新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
+            </p>
           </div>
-          <p class="c-card__text">
-            新規サイトを公開しました。今回のサイトは白と黒を基調にしたミニマルなデザインになっています。
-          </p>
         </div>
       </div>
     </section>
     <section class="p-contact">
-      <h2 class="c-text__sectionTitle">お問い合わせ</h2>
-      <form action="#">
-        <div>
-          <label for="name">担当者名</label><br>
-          <input type="text" id="name" name="name">
+      <div class="p-contact__inner">
+        <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+        <form action="#">
+          <div>
+            <label for="name">担当者名</label><br>
+            <input type="text" id="name" name="name">
+          </div>
+          <div>
+            <label for="tel">電話番号</label><br>
+            <input type="text" id="tel" name="tel">
+          </div>
+          <div>
+            <label for="email">メールアドレス</label><br>
+            <input type="text" id="email" name="email">
+          </div>
+          <div class="p-contact__messageArea">
+            <label for="message">お問い合わせ内容</label><br>
+            <input type="textarea" id="message" name="message">
+          </div>
+        </form>
+        <div class="p-contact__button c-button">
+          <input type="submit" value="送信">
         </div>
-        <div>
-          <label for="tel">電話番号</label><br>
-          <input type="text" id="tel" name="tel">
-        </div>
-        <div>
-          <label for="email">メールアドレス</label><br>
-          <input type="text" id="email" name="email">
-        </div>
-        <div class="p-contact__messageArea">
-          <label for="message">お問い合わせ内容</label><br>
-          <input type="textarea" id="message" name="message">
-        </div>
-      </form>
-      <div class="p-contact__button c-button">
-        <input type="submit" value="送信する">
       </div>
     </section>
   </main>
   <footer class="l-footer">
     <div class="p-footer">
-      <p>©︎crest.design all rights reserved</p>
+      <div class="p-footer__inner">
+        <p>©︎crest.design all rights reserved</p>
+      </div>
     </div>
   </footer>
   <!-- jQuery -->

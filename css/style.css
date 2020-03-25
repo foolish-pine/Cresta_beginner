@@ -265,20 +265,23 @@ img {
   position: fixed;
   width: 100%;
   z-index: 100;
-  border-bottom: solid 2px #f5f5f5;
-  background: #1B1310;
 }
 
 /* ================================================================
-  メインビジュアルレイアウト
+  メインレイアウト
    ================================================================ */
 .l-main {
   width: 100%;
+  padding-top: 75px;
 }
 
 /* ================================================================
   フッターレイアウト
    ================================================================ */
+.l-footer {
+  width: 100%;
+}
+
 /* ===============================================================
   Component
   コンポーネント
@@ -286,33 +289,76 @@ img {
 /* ===================================================================
   ボタンコンポーネント
    =================================================================== */
+.c-button {
+  width: 235px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 51px;
+  -webkit-box-shadow: 0 0 6px #1B1310;
+          box-shadow: 0 0 6px #1B1310;
+  color: #fff;
+  background-color: #1B1310;
+  font-size: 2rem;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+.c-button input {
+  width: 100%;
+  border-radius: 51px;
+}
+
 /* ===================================================================
   テキストコンポーネント
    =================================================================== */
 .c-text {
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  color: #141414;
   line-height: calc(30/14);
+  color: #141414;
+  font-weight: bold;
+  font-size: 1.4rem;
+  letter-spacing: .05em;
 }
 
 .c-text__sectionTitle {
-  text-align: center;
-  font-size: 3.6rem;
-  font-weight: medium;
-  letter-spacing: 0.05em;
-  color: #141414;
   margin-bottom: 70px;
+  color: #141414;
+  font-weight: medium;
+  font-size: 3.6rem;
+  text-align: center;
+  letter-spacing: .05em;
 }
 
 .c-text__sectionSubTitle {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #141414;
-  letter-spacing: 0.1em;
   line-height: 2;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+  color: #141414;
+  font-weight: bold;
+  font-size: 2rem;
+  letter-spacing: .1em;
+}
+
+/* ===================================================================
+  カードコンポーネント
+   =================================================================== */
+.c-card {
+  width: 320px;
+}
+
+.c-card__image {
+  width: 100%;
+}
+
+.c-card__text {
+  width: 100%;
+  max-width: 320px;
+  line-height: calc(25/13);
+  padding: 19px 33px 22px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  color: #141414;
+  font-family: 'Hiragino Kaku Gothic ProN';
+  font-size: 1.3rem;
+  letter-spacing: .05em;
 }
 
 /* ===============================================================
@@ -323,16 +369,30 @@ img {
   ヘッダー
    ================================================================ */
 .p-header {
+  width: 100%;
+  max-width: 1440px;
+  height: 75px;
+  margin: 0 auto;
+  border-bottom: solid 1px #f5f5f5;
+  background: #1B1310;
+}
+
+.p-header__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  margin: 0 auto;
-  max-width: calc((300/375) * 100%);
-  height: 75px;
+  max-width: calc((345/375) * 100%);
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-header__inner {
+    max-width: 1200px;
+  }
 }
 
 .p-header__logo {
@@ -341,21 +401,53 @@ img {
 
 .p-header__logo h1 {
   color: #fff;
-  font-family: 'Roboto' sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: medium;
   font-size: 2.6rem;
-  letter-spacing: .05em;
+  letter-spacing: 0;
 }
 
 .p-header__nav {
   display: none;
+  margin-top: 27px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-header__nav {
+    display: block;
+  }
+}
+
+.p-header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.p-header__item {
+  margin-left: 20px;
+}
+
+.p-header__item a {
+  color: #fff;
+  font-weight: medium;
+  font-size: 1.6rem;
+  text-decoration: none;
+  letter-spacing: 0;
 }
 
 .p-header__menu {
   position: relative;
   width: 25px;
   height: 16px;
-  margin-top: 30px;
+  margin-top: 29px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-header__menu {
+    display: none;
+  }
 }
 
 .p-header__menuLine {
@@ -370,11 +462,11 @@ img {
 }
 
 .p-header__menuLine:nth-child(2) {
-  top: 7px;
+  top: 8px;
 }
 
 .p-header__menuLine:last-child {
-  top: 14px;
+  top: 16px;
 }
 
 /* ================================================================
@@ -386,6 +478,16 @@ img {
   background-image: url(../../../image/fv-bgi_sp@2x.jpg);
   background-position: center;
   background-size: cover;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-mainVisual {
+    max-width: 1440px;
+    height: 740px;
+    margin: 0 auto;
+    background-image: url(../../../image/fv-bgi@2x.jpg);
+    background-position: center bottom;
+  }
 }
 
 .p-mainVisual__catch {
@@ -402,6 +504,12 @@ img {
           transform: top -50% left -50%;
 }
 
+@media print, screen and (min-width: 768px) {
+  .p-mainVisual__catch {
+    max-width: 449px;
+  }
+}
+
 .p-mainVisual__catch p {
   line-height: 100px;
   color: #fff;
@@ -416,6 +524,203 @@ img {
    ================================================================ */
 .p-about {
   padding-top: 100px;
+}
+
+.p-about__inner {
+  width: 100%;
+  max-width: calc((345/375) * 100%);
   margin: 0 auto;
-  max-width: calc((300/375) * 100%);
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-about__inner {
+    max-width: 1030px;
+  }
+}
+
+/* ================================================================
+  Service
+   ================================================================ */
+.p-service {
+  padding-top: 150px;
+}
+
+.p-service__inner {
+  width: 100%;
+  max-width: calc((345/375) * 100%);
+  margin: 0 auto;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-service__inner {
+    max-width: 1030px;
+  }
+}
+
+.p-service__subTitle {
+  margin-bottom: 20px;
+}
+
+.p-service__text {
+  margin-bottom: 35px;
+}
+
+.p-service__container {
+  margin-bottom: 40px;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-service__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-service__container:nth-child(2) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+  }
+}
+
+.p-service__container img {
+  width: 100%;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-service__container img {
+    width: calc((480/1030) * 100%);
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-service__textContainer {
+    width: calc((480/1030) * 100%);
+  }
+}
+
+/* ================================================================
+  News
+   ================================================================ */
+.p-news {
+  padding-top: 150px;
+}
+
+.p-news__inner {
+  width: 100%;
+  max-width: calc((345/375) * 100%);
+  margin: 0 auto;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-news__inner {
+    max-width: 1030px;
+  }
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-news__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+.p-news__card {
+  margin: 0 auto 50px;
+}
+
+/* ================================================================
+  Contact
+   ================================================================ */
+.p-contact {
+  padding-top: 100px;
+}
+
+.p-contact__inner {
+  width: 100%;
+  max-width: calc((345/375) * 100%);
+  margin: 0 auto;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-contact__inner {
+    max-width: 700px;
+  }
+}
+
+.p-contact__sectionTitle {
+  line-height: 2;
+  margin-bottom: 62px;
+  font-weight: bold;
+  font-size: 2.4rem;
+  letter-spacing: .1;
+}
+
+.p-contact form label {
+  font-family: 'Hiragino Kaku Gothic ProN';
+}
+
+.p-contact form input {
+  width: 100%;
+  line-height: 1.8;
+  margin-bottom: 22px;
+  border: solid 1px #141414;
+}
+
+.p-contact__messageArea {
+  margin-bottom: 28px;
+}
+
+.p-contact__messageArea input {
+  height: 171px;
+}
+
+.p-contact__button {
+  margin: 0 auto 50px;
+}
+
+/* ================================================================
+  フッター
+   ================================================================ */
+.p-footer {
+  width: 100%;
+  height: 60px;
+  background-color: #1B1310;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-footer {
+    height: 80px;
+  }
+}
+
+.p-footer__inner {
+  width: 100%;
+  max-width: calc((345/375) * 100%);
+  margin: 0 auto;
+}
+
+.p-footer p {
+  line-height: 60px;
+  color: #fff;
+  font-weight: regular;
+  font-size: 1.4rem;
+  text-align: center;
+  letter-spacing: .05em;
+}
+
+@media print, screen and (min-width: 768px) {
+  .p-footer p {
+    line-height: 80px;
+  }
 }

@@ -1,3 +1,21 @@
 /* ===================================================================
   ボタンコンポーネント
    =================================================================== */
+
+.c-button {
+	width: 235px;
+	height: 60px;
+	line-height: 60px;
+	border-radius: 51px;
+	box-shadow: 0 0 6px $color-button-bg;
+	color: #fff;
+	background-color: $color-button-bg;
+	font-size: 2rem;
+	text-align: center;
+	letter-spacing: .05em;
+
+	input {
+		width: 100%;
+		border-radius: 51px;
+	}
+}

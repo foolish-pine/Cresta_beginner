@@ -2,10 +2,10 @@
   メディアクエリ
    ================================================================ */
 
-$pc: 560px;
+$pc: 768px;
 
 $breakpoints : (
-  "pc":"print,screen and (min-width:560px)", //ブラウザ幅560px以上で適用
+  "pc":"print,screen and (min-width:768px)", //ブラウザ幅768px以上で適用
 );
 
 @mixin mq($breakpoint:pc){

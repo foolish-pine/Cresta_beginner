@@ -62,7 +62,8 @@
 
 @import 
 'Object/Component/c-button',
-'Object/Component/c-text'
+'Object/Component/c-text',
+'Object/Component/c-card'
 ;
 
 
@@ -74,5 +75,9 @@
 @import 
 'Object/Project/p-header',
 'Object/Project/p-mainVisual',
-'Object/Project/p-about'
+'Object/Project/p-about',
+'Object/Project/p-service',
+'Object/Project/p-news',
+'Object/Project/p-contact',
+'Object/Project/p-footer'
 ;

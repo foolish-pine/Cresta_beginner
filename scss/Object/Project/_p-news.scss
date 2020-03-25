@@ -1,17 +1,30 @@
 /* ================================================================
-  About
+  News
    ================================================================ */
 
-.p-about {
-	padding-top: 100px;
+.p-news {
+	padding-top: 150px;
 
 	&__inner {
 		width: 100%;
 		max-width: $width-inner-sp;
-    margin: 0 auto;
-    
-    @include mq(pc) {
+		margin: 0 auto;
+
+		@include mq(pc) {
 			max-width: $max-width-inner-pc;
 		}
+	}
+
+
+	&__container {
+		
+		@include mq(pc) {
+			display: flex;
+			justify-content: space-between;
+		}
+	}
+
+	&__card {
+		margin: 0 auto 50px;
 	}
 }
