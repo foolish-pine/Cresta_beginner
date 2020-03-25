@@ -41,14 +41,17 @@
 
 		img {
 			width: 100%;
-
-    @include mq(pc) {
-				width: calc((480/1030) * 100%);
-			}
+			height: auto;
 		}
 	}
 
 	&__textContainer {
+		@include mq(pc) {
+			width: calc((480/1030) * 100%);
+		}
+	}
+	
+	&__image {
 		@include mq(pc) {
 			width: calc((480/1030) * 100%);
 		}

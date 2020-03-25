@@ -3,5 +3,6 @@
    ================================================================ */
 
 $max-width: 1440px;
-$max-width-inner-pc: 1030px;
+$max-width-header-inner-pc: calc((1200/1400) * 100%);
+$max-width-inner-pc: calc((1030/1400) * 100%);
 $width-inner-sp: calc((345/375) * 100%);

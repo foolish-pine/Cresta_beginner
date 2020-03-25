@@ -12,13 +12,12 @@
 
 	&__inner {
 		display: flex;
-		width: 100%;
-		max-width: $width-inner-sp;
+		width: $width-inner-sp;
 		justify-content: space-between;
 		margin: 0 auto;
 
 		@include mq(pc) {
-			max-width: 1200px;
+			width: $max-width-header-inner-pc;
 		}
 	}
 

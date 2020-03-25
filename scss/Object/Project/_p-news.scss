@@ -20,7 +20,7 @@
 		
 		@include mq(pc) {
 			display: flex;
-			justify-content: space-between;
+			flex-wrap: wrap;
 		}
 	}
 
