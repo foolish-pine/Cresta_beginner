@@ -11,6 +11,7 @@
 	background: $color-header-bg;
 
 	&__inner {
+		position: relative;
 		display: flex;
 		width: $width-inner-sp;
 		justify-content: space-between;
@@ -34,21 +35,44 @@
 	}
 
 	&__nav {
+		position: absolute;
+		z-index: 100;
 		display: none;
-		margin-top: 27px;
-
+		top: 0;
+		left: calc((30/375) * -100%);
+		width: 100vw;
+		background-color: $color-header-bg;
+		
 		@include mq(pc) {
+			position: static;
+			width: auto;
+			margin-top: 30px;
 			display: block;
+			background-color: transparent;
 		}
 	}
-
+	
 	&__list {
+		height: 665px;
 		display: flex;
+		align-items: center;
+		flex-direction: column;
+		justify-content: center;
 		list-style: none;
-	}
+		
+		@include mq(pc) {
+			align-items: unset;
+			flex-direction: unset;
 
+		}
+	}
+	
 	&__item {
-		margin-left: 20px;
+		margin-bottom: 50px;
+
+		@include mq(pc) {
+			margin-left: 30px;
+		}
 
 		a {
 			color: #fff;
@@ -61,6 +85,7 @@
 
 	&__menu {
 		position: relative;
+		z-index: 101;
 		width: 25px;
 		height: 16px;
 		margin-top: 29px;
@@ -75,18 +100,34 @@
 		width: 25px;
 		height: 2px;
 		background-color: #fff;
+		transition: transform .3s;
 
 
 		&:first-child {
 			top: 0;
+
+			&.active {
+				top: 8px;
+				transform: rotate(45deg);
+			}
 		}
 
 		&:nth-child(2) {
 			top: 8px;
+
+			&.active {
+        transform:scaleX(0);
+      }
 		}
 
 		&:last-child {
 			top: 16px;
+
+			&.active {
+        width: 24px;
+        top: 8px;
+				transform: rotate(135deg);
+			}
 		}
 	}
 }
