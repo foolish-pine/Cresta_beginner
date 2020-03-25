@@ -543,7 +543,7 @@ img {
 .p-mainVisual {
   position: relative;
   height: 590px;
-  background-image: url(../../../image/fv-bgi_sp@2x.jpg);
+  background-image: url(https://github.com/foolish-pine/Cresta_beginner/blob/master/image/fv-bgi_sp@2x.jpg?raw=true);
   background-position: center;
   background-size: cover;
 }
@@ -553,7 +553,7 @@ img {
     max-width: 1440px;
     height: 740px;
     margin: 0 auto;
-    background-image: url(../../../image/fv-bgi@2x.jpg);
+    background-image: url(https://github.com/foolish-pine/Cresta_beginner/blob/master/image/fv-bgi@2x.jpg?raw=true);
     background-position: center bottom;
   }
 }
