@@ -27,12 +27,11 @@ HTML / CSS / Sass / JavaScript(jQuery) / Adobe XD / Visual Studio Code
 <br>
 
 ## スクリーンショット
-<!-- <br>
-<br>
-<img src="https://github.com/foolish-pine/KAGU/blob/master/image/KAGU.png?raw=true" width=500px>
 <br>
 <br>
-<img src="https://github.com/foolish-pine/KAGU/blob/master/image/KAGU_tab.png?raw=true" width=500px>
+<img src="https://github.com/foolish-pine/Cresta_beginner/blob/master/image/cresta1_pc.png?raw=true" width=500px>
 <br>
 <br>
-<img src="https://github.com/foolish-pine/KAGU/blob/master/image/KAGU_sp.png?raw=true" width=500px> -->
+<img src="https://github.com/foolish-pine/Cresta_beginner/blob/master/image/cresta1_sp.png?raw=true" width=500px>
+<br>
+<br>
