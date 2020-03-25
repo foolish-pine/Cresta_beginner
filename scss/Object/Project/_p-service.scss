@@ -4,8 +4,12 @@
 
 .p-service {
   padding-top: 150px;
-  margin: 0 auto;
-  max-width: $width-inner-sp;
+
+  &__inner {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $width-inner-sp;
+  }
 
   @include mq(pc) {
     max-width: $max-width-inner-pc;

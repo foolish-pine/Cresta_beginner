@@ -3,9 +3,13 @@
    ================================================================ */
 
 .p-contact {
-	max-width: $width-inner-sp;
-	margin: 0 auto;
 	padding-top: 100px;
+
+	&__inner {
+    width: 100%;
+    margin: 0 auto;
+    max-width: $width-inner-sp;
+  }
 
 	@include mq(pc) {
 		max-width: 700px;
