@@ -265,8 +265,6 @@ img {
   position: fixed;
   width: 100%;
   z-index: 100;
-  border-bottom: solid 1px #f5f5f5;
-  background: #1B1310;
 }
 
 /* ================================================================
@@ -292,6 +290,7 @@ img {
   ボタンコンポーネント
    =================================================================== */
 .c-button {
+  text-align: center;
   width: 235px;
   height: 60px;
   line-height: 60px;
@@ -375,6 +374,14 @@ img {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  border-bottom: solid 1px #f5f5f5;
+  background: #1B1310;
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-header {
+    max-width: 1440px;
+  }
 }
 
 .p-header__logo {
@@ -391,6 +398,32 @@ img {
 
 .p-header__nav {
   display: none;
+  margin-top: 27px;
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-header__nav {
+    display: block;
+  }
+}
+
+.p-header__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.p-header__item {
+  margin-left: 20px;
+}
+
+.p-header__item a {
+  font-size: 1.6rem;
+  color: #fff;
+  letter-spacing: 0;
+  font-weight: medium;
+  text-decoration: none;
 }
 
 .p-header__menu {
@@ -405,6 +438,12 @@ img {
   width: 25px;
   height: 2px;
   background-color: #fff;
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-header__menuLine {
+    display: none;
+  }
 }
 
 .p-header__menuLine:first-child {
@@ -430,6 +469,16 @@ img {
   background-size: cover;
 }
 
+@media print, screen and (min-width: 560px) {
+  .p-mainVisual {
+    max-width: 1440px;
+    height: 740px;
+    margin: 0 auto;
+    background-image: url(../../../image/fv-bgi@2x.jpg);
+    background-position: center bottom;
+  }
+}
+
 .p-mainVisual__catch {
   position: absolute;
   top: 0;
@@ -442,6 +491,12 @@ img {
   border: solid 2px #fff;
   -webkit-transform: top -50% left -50%;
           transform: top -50% left -50%;
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-mainVisual__catch {
+    max-width: 449px;
+  }
 }
 
 .p-mainVisual__catch p {
@@ -462,6 +517,12 @@ img {
   max-width: calc((345/375) * 100%);
 }
 
+@media print, screen and (min-width: 560px) {
+  .p-about {
+    max-width: 1030px;
+  }
+}
+
 /* ================================================================
   Service
    ================================================================ */
@@ -469,6 +530,12 @@ img {
   padding-top: 150px;
   margin: 0 auto;
   max-width: calc((345/375) * 100%);
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-service {
+    max-width: 1030px;
+  }
 }
 
 .p-service__subTitle {
@@ -483,8 +550,40 @@ img {
   margin-bottom: 40px;
 }
 
+@media print, screen and (min-width: 560px) {
+  .p-service__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-service__container:nth-child(2) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse;
+            flex-flow: row-reverse;
+  }
+}
+
 .p-service__container img {
   width: 100%;
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-service__container img {
+    width: calc((480/1030) * 100%);
+  }
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-service__textContainer {
+    width: calc((480/1030) * 100%);
+  }
 }
 
 /* ================================================================
@@ -494,6 +593,20 @@ img {
   max-width: calc((345/375) * 100%);
   margin: 0 auto;
   padding-top: 150px;
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-news {
+    max-width: 1030px;
+  }
+}
+
+@media print, screen and (min-width: 560px) {
+  .p-news__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .p-news__card {
@@ -509,6 +622,12 @@ img {
   padding-top: 100px;
 }
 
+@media print, screen and (min-width: 560px) {
+  .p-contact {
+    max-width: 700px;
+  }
+}
+
 .p-contact__sectionTitle {
   font-size: 2.4rem;
   font-weight: bold;
@@ -517,11 +636,11 @@ img {
   margin-bottom: 62px;
 }
 
-.p-contact label {
+.p-contact form label {
   font-family: "Hiragino Kaku Gothic ProN";
 }
 
-.p-contact input {
+.p-contact form input {
   width: 100%;
   border: solid 1px #141414;
   margin-bottom: 22px;

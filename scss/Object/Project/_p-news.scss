@@ -7,6 +7,16 @@
 	margin: 0 auto;
 	padding-top: 150px;
 
+	@include mq(pc) {
+		max-width: $max-width-inner-pc;
+	}
+
+	&__container {
+		@include mq(pc){
+			display: flex;
+		}
+	}
+
 	&__card {
 		margin: 0 auto 50px;
 	}

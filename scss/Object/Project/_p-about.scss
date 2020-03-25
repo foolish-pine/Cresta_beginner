@@ -5,5 +5,9 @@
 .p-about {
   padding-top: 100px;
   margin: 0 auto;
-	max-width: $width-inner-sp;
+  max-width: $width-inner-sp;
+  
+  @include mq(pc){
+		max-width: $max-width-inner-pc;
+	}
 }
