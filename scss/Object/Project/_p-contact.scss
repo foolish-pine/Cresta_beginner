@@ -6,38 +6,35 @@
 	padding-top: 100px;
 
 	&__inner {
-    width: 100%;
-    margin: 0 auto;
-    max-width: $width-inner-sp;
-  }
+		width: 100%;
+		max-width: $width-inner-sp;
+		margin: 0 auto;
 
-	@include mq(pc) {
-		max-width: 700px;
+		@include mq(pc) {
+			max-width: 700px;
+		}
 	}
 
-
 	&__sectionTitle {
-		font-size: 2.4rem;
-		font-weight: bold;
 		line-height: 2;
-		letter-spacing: .1;
 		margin-bottom: 62px;
+		font-weight: bold;
+		font-size: 2.4rem;
+		letter-spacing: .1;
 	}
 
 	form {
 		label {
-			font-family: "Hiragino Kaku Gothic ProN";
+			font-family: 'Hiragino Kaku Gothic ProN';
 		}
-	
+
 		input {
 			width: 100%;
-			border: solid 1px $color-form-border;
-			margin-bottom: 22px;
 			line-height: 1.8;
+			margin-bottom: 22px;
+			border: solid 1px $color-form-border;
 		}
-
 	}
-
 
 	&__messageArea {
 		margin-bottom: 28px;
@@ -50,5 +47,4 @@
 	&__button {
 		margin: 0 auto 50px;
 	}
-
 }

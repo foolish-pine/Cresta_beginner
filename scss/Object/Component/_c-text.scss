@@ -3,27 +3,27 @@
    =================================================================== */
 
 .c-text {
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.05em;
-  color: $color-text;
-  line-height: calc(30/14);
+	line-height: calc(30/14);
+	color: $color-text;
+	font-weight: bold;
+	font-size: 1.4rem;
+	letter-spacing: .05em;
 
-  &__sectionTitle {
-    text-align: center;
-    font-size: 3.6rem;
-    font-weight: medium;
-    letter-spacing: 0.05em;
-    color: $color-text-sectionTitle;
-    margin-bottom: 70px;
-  }
+	&__sectionTitle {
+		margin-bottom: 70px;
+		color: $color-text-sectionTitle;
+		font-weight: medium;
+		font-size: 3.6rem;
+		text-align: center;
+		letter-spacing: .05em;
+	}
 
-  &__sectionSubTitle {
-    font-size: 2rem;
-    font-weight: bold;
-    color: $color-text-sectionSubTitle;
-    letter-spacing: 0.1em;
-    line-height: 2;
-    margin-bottom: 20px;
-  }
+	&__sectionSubTitle {
+		line-height: 2;
+		margin-bottom: 20px;
+		color: $color-text-sectionSubTitle;
+		font-weight: bold;
+		font-size: 2rem;
+		letter-spacing: .1em;
+	}
 }

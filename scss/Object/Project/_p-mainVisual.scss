@@ -14,7 +14,7 @@
 		height: 740px;
 		margin: 0 auto;
 		background-image: url(../../../image/fv-bgi@2x.jpg);
-	background-position: center bottom;
+		background-position: center bottom;
 	}
 
 	&__catch {
@@ -28,7 +28,7 @@
 		margin: auto;
 		border: solid 2px #fff;
 		transform: top -50% left -50%;
-		
+
 		@include mq(pc) {
 			max-width: 449px;
 		}

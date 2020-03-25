@@ -4,13 +4,11 @@
 
 .p-header {
 	width: 100%;
+	max-width: $max-width;
 	height: 75px;
+	margin: 0 auto;
 	border-bottom: solid 1px $color-header-border;
 	background: $color-header-bg;
-
-	@include mq(pc) {
-		max-width: $max-width;
-	}
 
 	&__inner {
 		display: flex;
@@ -18,6 +16,10 @@
 		max-width: $width-inner-sp;
 		justify-content: space-between;
 		margin: 0 auto;
+
+		@include mq(pc) {
+			max-width: 1200px;
+		}
 	}
 
 	&__logo {
@@ -36,7 +38,7 @@
 		display: none;
 		margin-top: 27px;
 
-@include mq(pc) {
+		@include mq(pc) {
 			display: block;
 		}
 	}
@@ -63,6 +65,10 @@
 		width: 25px;
 		height: 16px;
 		margin-top: 29px;
+
+		@include mq(pc) {
+			display: none;
+		}
 	}
 
 	&__menuLine {
@@ -71,9 +77,6 @@
 		height: 2px;
 		background-color: #fff;
 
-@include mq(pc) {
-			display: none;
-		}
 
 		&:first-child {
 			top: 0;

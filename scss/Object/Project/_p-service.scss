@@ -3,52 +3,54 @@
    ================================================================ */
 
 .p-service {
-  padding-top: 150px;
+	padding-top: 150px;
 
-  &__inner {
-    width: 100%;
+	&__inner {
+		width: 100%;
+		max-width: $width-inner-sp;
     margin: 0 auto;
-    max-width: $width-inner-sp;
-  }
+    
+    @include mq(pc) {
+			max-width: $max-width-inner-pc;
+		}
+	}
 
-  @include mq(pc) {
-    max-width: $max-width-inner-pc;
-  }
-  
-  &__subTitle {
-    margin-bottom: 20px;
-  }
 
-  &__text {
-    margin-bottom: 35px;
-  }
+	&__subTitle {
+		margin-bottom: 20px;
+	}
 
-  &__container {
-    margin-bottom: 40px;
+	&__text {
+		margin-bottom: 35px;
+	}
+
+	&__container {
+		margin-bottom: 40px;
 
     @include mq(pc) {
-      display: flex;
-      justify-content: space-between;
-    }
+			display: flex;
+			justify-content: space-between;
+		}
 
-    &:nth-child(2) {
-      @include mq(pc) {
-        flex-flow: row-reverse;
-      }
-    }
+		&:nth-child(2) {
+      
+			@include mq(pc) {
+				flex-flow: row-reverse;
+			}
+		}
 
-    img {
-      width: 100%;
+		img {
+			width: 100%;
 
-      @include mq(pc) {
-        width: calc((480/1030) * 100%);
-      }
-    }
-  }
-
-  &__textContainer {
     @include mq(pc) {
-      width: calc((480/1030) * 100%);
-    }
-  }
+				width: calc((480/1030) * 100%);
+			}
+		}
+	}
+
+	&__textContainer {
+		@include mq(pc) {
+			width: calc((480/1030) * 100%);
+		}
+	}
 }

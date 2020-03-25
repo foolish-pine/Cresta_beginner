@@ -2,22 +2,25 @@
   News
    ================================================================ */
 
-.p-news { 
+.p-news {
 	padding-top: 150px;
 
 	&__inner {
-    width: 100%;
-    margin: 0 auto;
-    max-width: $width-inner-sp;
-  }
+		width: 100%;
+		max-width: $width-inner-sp;
+		margin: 0 auto;
 
-	@include mq(pc) {
-		max-width: $max-width-inner-pc;
+		@include mq(pc) {
+			max-width: $max-width-inner-pc;
+		}
 	}
 
+
 	&__container {
-		@include mq(pc){
+		
+		@include mq(pc) {
 			display: flex;
+			justify-content: space-between;
 		}
 	}
 
