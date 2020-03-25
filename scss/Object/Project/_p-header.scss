@@ -25,10 +25,14 @@
 	&__logo {
 		margin-top: 20px;
 
+		a {
+			text-decoration: none;
+		}
+
 		h1 {
 			color: #fff;
 			font-family: 'Roboto', sans-serif;
-			font-weight: medium;
+			font-weight: 500;
 			font-size: 2.6rem;
 			letter-spacing: 0;
 		}
@@ -53,22 +57,32 @@
 	}
 	
 	&__list {
-		height: 665px;
+		height: 100vh;
 		display: flex;
 		align-items: center;
 		flex-direction: column;
 		justify-content: center;
 		list-style: none;
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
 		
 		@include mq(pc) {
+			height: auto;
 			align-items: unset;
 			flex-direction: unset;
-
 		}
 	}
 	
 	&__item {
 		margin-bottom: 50px;
+		padding-bottom: 3px;
+		border-bottom: 2px solid transparent;
+		transition: all .4s;
+
+		&:hover {
+			border-bottom: 2px solid #fff;
+			transition: all .4s;
+		}
 
 		@include mq(pc) {
 			margin-left: 30px;
@@ -76,7 +90,7 @@
 
 		a {
 			color: #fff;
-			font-weight: medium;
+			font-weight: 500;
 			font-size: 1.6rem;
 			text-decoration: none;
 			letter-spacing: 0;

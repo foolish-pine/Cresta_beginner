@@ -301,6 +301,16 @@ img {
   font-size: 2rem;
   text-align: center;
   letter-spacing: .05em;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.c-button:hover {
+  color: #1B1310;
+  background-color: #fff;
+  font-weight: 700;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 .c-button input {
@@ -406,10 +416,14 @@ img {
   margin-top: 20px;
 }
 
+.p-header__logo a {
+  text-decoration: none;
+}
+
 .p-header__logo h1 {
   color: #fff;
   font-family: 'Roboto', sans-serif;
-  font-weight: medium;
+  font-weight: 500;
   font-size: 2.6rem;
   letter-spacing: 0;
 }
@@ -435,7 +449,7 @@ img {
 }
 
 .p-header__list {
-  height: 665px;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -450,10 +464,13 @@ img {
       -ms-flex-pack: center;
           justify-content: center;
   list-style: none;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 @media print, screen and (min-width: 768px) {
   .p-header__list {
+    height: auto;
     -webkit-box-align: unset;
         -ms-flex-align: unset;
             align-items: unset;
@@ -466,6 +483,16 @@ img {
 
 .p-header__item {
   margin-bottom: 50px;
+  padding-bottom: 3px;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+
+.p-header__item:hover {
+  border-bottom: 2px solid #fff;
+  -webkit-transition: all .4s;
+  transition: all .4s;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -476,7 +503,7 @@ img {
 
 .p-header__item a {
   color: #fff;
-  font-weight: medium;
+  font-weight: 500;
   font-size: 1.6rem;
   text-decoration: none;
   letter-spacing: 0;
