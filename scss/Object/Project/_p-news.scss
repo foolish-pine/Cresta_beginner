@@ -26,9 +26,5 @@
 
 	&__card {
 		margin: 0 auto 50px;
-
-		@include mq(pc) {
-			margin: 0;
-		}
 	}
 }

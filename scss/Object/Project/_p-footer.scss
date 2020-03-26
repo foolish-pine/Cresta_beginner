@@ -4,7 +4,9 @@
 
 .p-footer {
 	width: 100%;
+	max-width: $max-width;
 	height: 60px;
+	margin: 0 auto;
 	background-color: $color-footer-bg;
 
 	@include mq(pc) {
@@ -12,7 +14,6 @@
 	}
 
 	&__inner {
-		width: 100%;
 		max-width: $max-width-inner-sp;
 		margin: 0 auto;
 	}
