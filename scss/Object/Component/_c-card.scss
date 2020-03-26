@@ -6,15 +6,17 @@
 	width: 320px;
 
 	&__image {
-		width: 100%;
+		img {
+			display: block;
+		}
 	}
 
 	&__text {
 		width: 100%;
 		max-width: 320px;
 		line-height: calc(25/13);
-		padding: 19px 33px 22px;
-		box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+		padding: 19px 33px 29px;
+		box-shadow: 0 0 6px rgba(0, 0, 0, .16);
 		color: $color-text;
 		font-family: 'Hiragino Kaku Gothic ProN';
 		font-size: 1.3rem;
