@@ -3,15 +3,14 @@
    ================================================================ */
 
 .p-about {
-	padding-top: 175px;
 	margin-top: -75px;
+	padding-top: 175px;
 
 	&__inner {
-		width: 100%;
-		max-width: $width-inner-sp;
-    margin: 0 auto;
-    
-    @include mq(pc) {
+		max-width: $max-width-inner-sp;
+		margin: 0 auto;
+		
+		@include mq(pc) {
 			max-width: $max-width-inner-pc;
 		}
 	}
