@@ -754,17 +754,11 @@ img {
   margin: 0 auto 50px;
 }
 
-@media print, screen and (min-width: 768px) {
-  .p-news__card {
-    margin: 0;
-  }
-}
-
 /* ================================================================
   Contact
    ================================================================ */
 .p-contact {
-  padding-top: 147px;
+  padding-top: 97px;
 }
 
 .p-contact__inner {
@@ -815,7 +809,9 @@ img {
    ================================================================ */
 .p-footer {
   width: 100%;
+  max-width: 1440px;
   height: 60px;
+  margin: 0 auto;
   background-color: #1B1310;
 }
 
@@ -826,7 +822,6 @@ img {
 }
 
 .p-footer__inner {
-  width: 100%;
   max-width: calc((345/375) * 100%);
   margin: 0 auto;
 }
