@@ -318,6 +318,7 @@ img {
 .c-button input {
   width: 100%;
   border-radius: 51px;
+  border: none;
 }
 
 /* ===================================================================
@@ -378,6 +379,23 @@ img {
   font-family: 'Hiragino Kaku Gothic ProN';
   font-size: 1.3rem;
   letter-spacing: .05em;
+}
+
+/* ===================================================================
+  ボタンコンポーネント
+   =================================================================== */
+.c-alert {
+  width: 100%;
+  line-height: 2;
+  color: white;
+}
+
+.c-alert--alert {
+  background-color: #f44336;
+}
+
+.c-alert--success {
+  background-color: #4CAF50;
 }
 
 /* ===============================================================
@@ -781,23 +799,27 @@ img {
   letter-spacing: .1;
 }
 
-.p-contact form label {
-  font-family: 'Hiragino Kaku Gothic ProN';
-}
-
-.p-contact form input {
+.p-contact__textbox {
   width: 100%;
   line-height: 1.8;
   margin-bottom: 22px;
   border: solid 1px #141414;
 }
 
+.p-contact form label {
+  font-family: 'Hiragino Kaku Gothic ProN';
+}
+
 .p-contact__messageArea {
   margin-bottom: 27px;
 }
 
-.p-contact__messageArea input {
+.p-contact__messageArea textarea {
+  width: 100%;
+  line-height: 1.8;
   height: 171px;
+  line-height: 1.5;
+  border: solid 1px #141414;
 }
 
 .p-contact__button {

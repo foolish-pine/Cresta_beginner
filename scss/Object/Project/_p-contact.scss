@@ -23,24 +23,28 @@
 		letter-spacing: .1;
 	}
 
+	&__textbox {
+		width: 100%;
+		line-height: 1.8;
+		margin-bottom: 22px;
+		border: solid 1px $color-form-border;
+	}
+
 	form {
 		label {
 			font-family: 'Hiragino Kaku Gothic ProN';
-		}
-
-		input {
-			width: 100%;
-			line-height: 1.8;
-			margin-bottom: 22px;
-			border: solid 1px $color-form-border;
 		}
 	}
 
 	&__messageArea {
 		margin-bottom: 27px;
 
-		input {
+		textarea {
+			width: 100%;
+			line-height: 1.8;
 			height: 171px;
+			line-height: 1.5;
+			border: solid 1px $color-form-border;
 		}
 	}
 
