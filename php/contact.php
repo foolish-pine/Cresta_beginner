@@ -4,7 +4,7 @@ $request_datetime = date("Y年m月d日 H時i分s秒");
 
 $mailto = $request_param['email'];
 $to = $request_param['email'];
-$mailfrom = "From:foolish_pine-test@yahoo.co.jp";
+$mailfrom = "From: test@text.com";
 $subject = "お問い合わせありがとうございます。";
 
 
