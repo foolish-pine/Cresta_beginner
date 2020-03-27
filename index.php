@@ -4,8 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title></title>
+  <title>クリ★スタコーディング課題【初級編】</title>
   <meta name="description" content="">
+  <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
+  <link rel="manifest" href="image/favicon/site.webmanifest">
+  <link rel="mask-icon" href="image/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <!-- Google_Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:400,500,700|Roboto:400,500,700&display=swap&subset=japanese" rel="stylesheet">
   <!-- CSS -->
@@ -125,15 +132,15 @@
         <form action="php/contact.php" method="post">
           <div>
             <label for="name">担当者名</label><br>
-            <input class="p-contact__textbox" type="text" id="name" name="name" required/>
+            <input class="p-contact__textbox" type="text" id="name" name="name" required />
           </div>
           <div>
             <label for="tel">電話番号</label><br>
-            <input class="p-contact__textbox" type="text" id="tel" name="tel" required/>
+            <input class="p-contact__textbox" type="text" id="tel" name="tel" required />
           </div>
           <div>
             <label for="email">メールアドレス</label><br>
-            <input class="p-contact__textbox" type="text" id="email" name="email" required/>
+            <input class="p-contact__textbox" type="text" id="email" name="email" required />
           </div>
           <div class="p-contact__messageArea">
             <label for="message">お問い合わせ内容</label><br>

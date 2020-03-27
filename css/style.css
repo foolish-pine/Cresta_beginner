@@ -382,7 +382,7 @@ img {
 }
 
 /* ===================================================================
-  ボタンコンポーネント
+  アラートコンポーネント
    =================================================================== */
 .c-alert {
   width: 100%;
@@ -390,7 +390,7 @@ img {
   color: white;
 }
 
-.c-alert--alert {
+.c-alert--error {
   background-color: #f44336;
 }
 
@@ -589,7 +589,7 @@ img {
 .p-mainVisual {
   position: relative;
   height: 590px;
-  background-image: url(https://github.com/foolish-pine/Cresta_beginner/blob/master/image/fv-bgi_sp@2x.jpg?raw=true);
+  background-image: url(../image/fv-bgi_sp@2x.jpg);
   background-position: center;
   background-size: cover;
 }
@@ -599,7 +599,7 @@ img {
     max-width: 1440px;
     height: 740px;
     margin: 0 auto;
-    background-image: url(https://github.com/foolish-pine/Cresta_beginner/blob/master/image/fv-bgi@2x.jpg?raw=true);
+    background-image: url(../image/fv-bgi@2x.jpg);
     background-position: center bottom;
   }
 }
