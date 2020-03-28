@@ -12,7 +12,7 @@
 
 ## デザインデータについて
 このサイトのデザインデータはクリエイター向けメディア「クリ★スタ」様にて配布されているものです。<br>
-[【コーディング課題】XDからコーディングをしよう【初級編】](https://crestadesign.org/cording-first/#i)
+[【コーディング課題】XDからコーディングをしよう【初級編】](https://crestadesign.org/cording-first/)
 <br>
 <br>
 
