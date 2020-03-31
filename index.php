@@ -1,18 +1,23 @@
 <?php
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 
-function escape($str) {
-  return htmlspecialchars($str,ENT_QUOTES,'UTF-8');
+function escape($str)
+{
+  return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>クリ★スタコーディング課題【初級編】</title>
   <meta name="description" content="">
+  <!-- 検索結果から除外する -->
+  <meta name="robots" content="none">
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="image/favicon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="image/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="image/favicon/favicon-16x16.png">
@@ -29,26 +34,24 @@ function escape($str) {
 <body ontouchstart="">
   <header class="l-header">
     <div class="p-header">
-      <div class="p-header__inner">
-        <div class="p-header__logo">
-          <a href="#">
-            <h1>クリ★スタ</h1>
-          </a>
-        </div>
-        <nav class="p-header__nav">
-          <ul class="p-header__list">
-            <li class="p-header__item"><a class="js-smoothscroll" href="#about">About</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#service">Service</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#news">News</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
-          </ul>
-        </nav>
-        <a class="p-header__menu">
-          <span class="p-header__menuLine"></span>
-          <span class="p-header__menuLine"></span>
-          <span class="p-header__menuLine"></span>
+      <div class="p-header__logo">
+        <a href="#">
+          <h1>クリ★スタ</h1>
         </a>
       </div>
+      <nav class="p-header__nav">
+        <ul class="p-header__list">
+          <li class="p-header__item"><a class="js-smoothscroll" href="#about">About</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="#service">Service</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="#news">News</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <a class="p-header__menu">
+        <span class="p-header__menuLine"></span>
+        <span class="p-header__menuLine"></span>
+        <span class="p-header__menuLine"></span>
+      </a>
     </div>
   </header>
   <main class="l-main">
