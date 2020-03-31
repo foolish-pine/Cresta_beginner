@@ -407,6 +407,7 @@ img {
    ================================================================ */
 .p-header {
   width: 100%;
+  position: relative;
   max-width: 1440px;
   height: 75px;
   margin: 0 auto;
@@ -414,26 +415,10 @@ img {
   background: #1B1310;
 }
 
-.p-header__inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: relative;
-  max-width: calc((345/375) * 100%);
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  margin: 0 auto;
-}
-
-@media print, screen and (min-width: 768px) {
-  .p-header__inner {
-    max-width: calc((1200/1440) * 100%);
-  }
-}
-
 .p-header__logo {
-  margin-top: 20px;
+  position: absolute;
+  top: 20px;
+  left: 15px;
 }
 
 .p-header__logo a {
@@ -447,11 +432,16 @@ img {
   letter-spacing: 0;
 }
 
+@media print, screen and (min-width: 768px) {
+  .p-header__logo {
+    left: 120px;
+  }
+}
+
 .p-header__nav {
   display: none;
   position: absolute;
   top: 0;
-  left: calc((30/375) * -100%);
   z-index: 100;
   width: 100vw;
   background-color: #1B1310;
@@ -460,9 +450,9 @@ img {
 @media print, screen and (min-width: 768px) {
   .p-header__nav {
     display: block;
-    position: static;
     width: auto;
-    margin-top: 30px;
+    top: 30px;
+    right: 120px;
     background-color: transparent;
   }
 }
@@ -529,11 +519,12 @@ img {
 }
 
 .p-header__menu {
-  position: relative;
+  position: absolute;
   z-index: 101;
   width: 25px;
   height: 16px;
-  margin-top: 29px;
+  top: 29px;
+  right: 15px;
 }
 
 @media print, screen and (min-width: 768px) {
