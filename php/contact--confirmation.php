@@ -1,59 +1,9 @@
 <?php
-header('X-FRAME-OPTIONS: SAMEORIGIN');
+$page_flag = 0;
 
-function spaceTrim ($str) {
-  $str = preg_replace('/^[ 　]+/u', '', $str);
-  $str = preg_replace('/[ 　]+$/u', '', $str);
-  return $str;
+if(!empty($_POST['submit'])) {
+  $page_flag = 1;
 }
-
-$request_param = $_POST;
-$request_datetime = date("Y年m月d日 H時i分s秒");
-
-$mailto = $request_param['email'];
-$to = $request_param['email'];
-$mailfrom = "From: test@text.com";
-$subject = "お問い合わせありがとうございます。";
-
-
-//自動返信メール
-$content = "";
-$content .= $request_param['name']. "様\r\n\r\n";
-$content .= "お問い合わせありがとうございます。\r\n";
-$content .= "以下の内容でお問い合わせ承りました。\r\n\r\n";
-$content .= "=================================\r\n";
-$content .= "お問い合わせ日時: " . $request_datetime."\r\n";
-$content .= "お名前: " . htmlspecialchars($request_param['name'])."\r\n";
-$content .= "メールアドレス: " . htmlspecialchars($request_param['email'])."\r\n";
-$content .= "内容: " . htmlspecialchars($request_param['message'])."\r\n";
-$content .= "=================================\r\n";
-
-//管理者確認用メール
-$subject2 = "お問い合わせがありました。";
-$content2 = "";
-$content2 .= "お問い合わせがありました。\r\n";
-$content2 .= "お問い合わせ内容は以下のとおりです。\r\n\r\n";
-$content2 .= "=================================\r\n";
-$content2 .= "お問い合わせ日時: " . $request_datetime."\r\n";
-$content2 .= "お名前: " . htmlspecialchars($request_param['name'])."\r\n";
-$content2 .= "メールアドレス: " . htmlspecialchars($request_param['email'])."\r\n";
-$content2 .= "内容: " . htmlspecialchars($request_param['message'])."\r\n";
-$content2 .= "================================="."\r\n";
-
-mb_language("Japanese"); 
-mb_internal_encoding("UTF-8");
-
-//mail 送信
-if($request_param['token'] === '1234567'){
-  if(mb_send_mail($to, $subject2, $content2, $mailfrom)){
-      mb_send_mail($mailto,$subject,$content,$mailfrom);
-  } else {
-      header('Content-Type: text/html; charset=UTF-8');
-    echo "メールの送信に失敗しました";
-  };
-  } else {
-  echo "メールの送信に失敗しました（トークンエラー）";
-  }
 ?>
 
 <!DOCTYPE html>
@@ -79,6 +29,7 @@ if($request_param['token'] === '1234567'){
   <!-- CSS -->
   <link rel="stylesheet" href="../css/style.css">
 </head>
+
 <body ontouchstart="">
   <header class="l-header">
     <div class="p-header">
@@ -107,7 +58,46 @@ if($request_param['token'] === '1234567'){
   <main class="l-main">
     <section id="contact" class="p-contact">
       <div class="p-contact__inner">
-        <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせありがとうございました。</h2>
+        <?php if ($page_flag === 0): ?>
+        <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+        <form action="" method="post">
+          <div>
+            <label for="name">担当者名</label><br>
+            <?php if (isset($_POST['name'])) {
+              echo $_POST['name'];
+            } ?>
+          </div>
+          <div>
+            <label for="tel">電話番号</label><br>
+            <?php if (isset($_POST['tel'])) {
+              echo $_POST['tel'];
+            } ?>
+          </div>
+          <div>
+            <label for="email">メールアドレス</label><br>
+            <?php if (isset($_POST['email'])) {
+              echo $_POST['email'];
+            } ?>
+          </div>
+          <div class="p-contact__messageArea">
+            <label for="message">お問い合わせ内容</label><br>
+            <?php if (isset($_POST['email'])) {
+              echo $_POST['email'];
+            } ?>
+          </div>
+          <div class="p-contact__button c-button">
+            <input type="submit" name="submit" value="送信">
+          </div>
+          <div class="p-contact__button c-button">
+            <input type="submit" name="back" value="戻る">
+          </div>
+          <input type="hidden" name="name" value="<?php echo $_POST['name'] ?>">
+          <input type="hidden" name="email" value="<?php echo $_POST['email'] ?>">
+          <input type="hidden" name="message" value="<?php echo $_POST['message'] ?>">
+        </form>
+        <?php elseif ($page_flag === 1): ?>
+          <h2 class="p-contact__sectionTitle c-text__sectionTitle">送信が完了しました。</h2>
+        <?php endif; ?>
       </div>
     </section>
   </main>
@@ -119,4 +109,5 @@ if($request_param['token'] === '1234567'){
     </div>
   </footer>
 </body>
+
 </html>
