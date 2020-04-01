@@ -129,7 +129,7 @@
     <section id="contact" class="p-contact">
       <div class="p-contact__inner">
         <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
-        <form action="php/contact.php" method="post">
+        <form action="php/contact--confirmation.php" method="post">
           <div>
             <label for="name">担当者名</label><br>
             <input class="p-contact__textbox" type="text" id="name" name="name" required />
@@ -146,9 +146,8 @@
             <label for="message">お問い合わせ内容</label><br>
             <textarea id="message" name="message" required></textarea>
           </div>
-          <input type="hidden" id="token" name="token" value="1234567" />
           <div class="p-contact__button c-button">
-            <input type="submit" value="送信">
+            <input type="submit" value="確認画面へ">
           </div>
         </form>
       </div>
