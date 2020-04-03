@@ -317,12 +317,20 @@ img {
 
 .c-button input {
   width: 100%;
-  border-radius: 51px;
   border: none;
+  border-radius: 51px;
 }
 
 .c-button a {
+  display: block;
+  width: 100%;
+  border-radius: 51px;
+  color: #fff;
   text-decoration: none;
+}
+
+.c-button a:hover {
+  color: #1B1310;
 }
 
 /* ===================================================================
@@ -820,14 +828,26 @@ img {
 
 .p-contact__messageArea textarea {
   width: 100%;
-  line-height: 1.8;
   height: 171px;
+  line-height: 1.8;
   line-height: 1.5;
   border: solid 1px #141414;
 }
 
 .p-contact__button {
   margin: 0 auto 50px;
+}
+
+.p-contact__button--back {
+  color: #1B1310;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.p-contact__button--back:hover {
+  color: #1B1310;
+  background-color: #fff;
+  font-weight: 700;
 }
 
 /* ================================================================

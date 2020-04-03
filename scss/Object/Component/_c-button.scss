@@ -24,11 +24,19 @@
 
 	input {
 		width: 100%;
-		border-radius: 51px;
 		border: none;
+		border-radius: 51px;
 	}
 
 	a {
+		display: block;
+		width: 100%;
+		border-radius: 51px;
+		color: #fff;
 		text-decoration: none;
+
+		&:hover {
+			color: $color-button-text-hover;
+		}
 	}
 }

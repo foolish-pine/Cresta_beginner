@@ -81,10 +81,10 @@ if (!empty($_POST['back'])) {
         </div>
         <nav class="p-header__nav">
           <ul class="p-header__list">
-            <li class="p-header__item"><a class="js-smoothscroll" href="#about">About</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#service">Service</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#news">News</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#about">About</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#service">Service</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#news">News</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#contact">Contact</a></li>
           </ul>
         </nav>
         <a class="p-header__menu">
@@ -151,7 +151,7 @@ if (!empty($_POST['back'])) {
             <div class="p-contact__button c-button">
               <input type="submit" name="submit" value="送信">
             </div>
-            <div class="p-contact__button c-button">
+            <div class="p-contact__button p-contact__button--back c-button">
               <input type="submit" name="back" value="戻る">
             </div>
             <input type="hidden" name="name" value="<?php echo $_POST['name'] ?>">
