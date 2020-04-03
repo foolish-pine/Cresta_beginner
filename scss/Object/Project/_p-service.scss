@@ -21,6 +21,7 @@
 
 		@include mq(pc) {
 			margin-bottom: 28px;
+			white-space: nowrap;
 		}
 	}
 
@@ -42,11 +43,6 @@
 				flex-flow: row-reverse;
 			}
 		}
-
-		img {
-			width: 100%;
-			height: auto;
-		}
 	}
 
 	&__textContainer {
@@ -57,8 +53,15 @@
 	}
 
 	&__image {
+		img {
+			width: 100%;
+			height: auto;
+		}
+
 		@include mq(pc) {
 			width: calc((480/1030) * 100%);
+			display: flex;
+			align-items: center;
 		}
 	}
 }

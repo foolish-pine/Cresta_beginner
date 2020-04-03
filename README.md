@@ -12,12 +12,13 @@
 
 ## デザインデータについて
 このサイトのデザインデータはクリエイター向けメディア「クリ★スタ」様にて配布されているものです。<br>
-[【コーディング課題】XDからコーディングをしよう【初級編】](https://crestadesign.org/cording-first/#i)
+<br>
+[【コーディング課題】XDからコーディングをしよう【初級編】](https://crestadesign.org/cording-first/)
 <br>
 <br>
 
 ## 制作に使用した言語・ツール
-HTML / CSS / Sass / JavaScript(jQuery) / Adobe XD / Visual Studio Code
+HTML / CSS / Sass / JavaScript(jQuery) / PHP / Adobe XD / Visual Studio Code
 <br>
 <br>
 
