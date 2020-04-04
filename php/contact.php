@@ -209,7 +209,7 @@ function validation($data) {
           </form>
         <?php elseif ($page_flag === 1) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
-          <p class="p-contact__text--confirmation c-text">以下の内容で送信します。よろしいですか？<br>※利用者宛と管理者宛のメールの両方が入力されたメールアドレスに送信されます。</p>
+          <p class="p-contact__text--confirmation c-text">以下の内容で送信します。よろしいですか？<br>※利用者宛と管理者宛のメールが入力されたメールアドレスに送信されます。</p>
           <form action="" method="post">
             <div>
               <label for="name">担当者名</label><br>
