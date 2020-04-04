@@ -317,12 +317,20 @@ img {
 
 .c-button input {
   width: 100%;
-  border-radius: 51px;
   border: none;
+  border-radius: 51px;
 }
 
 .c-button a {
+  display: block;
+  width: 100%;
+  border-radius: 51px;
+  color: #fff;
   text-decoration: none;
+}
+
+.c-button a:hover {
+  color: #1B1310;
 }
 
 /* ===================================================================
@@ -800,6 +808,12 @@ img {
   letter-spacing: .1;
 }
 
+.p-contact__text--confirmation {
+  margin-bottom: 60px;
+  font-size: 1.9rem;
+  text-align: center;
+}
+
 .p-contact__textbox {
   width: 100%;
   line-height: 1.8;
@@ -811,20 +825,53 @@ img {
   font-family: 'Hiragino Kaku Gothic ProN';
 }
 
-.p-contact__messageArea {
-  margin-bottom: 27px;
+.p-contact__textbox--confirmation {
+  width: 100%;
+  line-height: 2;
+  margin-bottom: 22px;
+  background-color: #dfdfdf;
 }
 
-.p-contact__messageArea textarea {
+.p-contact__textarea {
+  margin-bottom: 40px;
+}
+
+.p-contact__textarea textarea {
   width: 100%;
-  line-height: 1.8;
   height: 171px;
   line-height: 1.5;
   border: solid 1px #141414;
 }
 
+.p-contact__textarea--confirmation {
+  width: 100%;
+  min-height: 171px;
+  line-height: 1.5;
+  margin-bottom: 27px;
+  background-color: #dfdfdf;
+}
+
+.p-contact__buttonContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 auto;
+}
+
 .p-contact__button {
   margin: 0 auto 50px;
+}
+
+.p-contact__button--back {
+  color: #1B1310;
+  background-color: #fff;
+  font-weight: 700;
+}
+
+.p-contact__button--back:hover {
+  color: #1B1310;
+  background-color: #fff;
+  font-weight: 700;
 }
 
 /* ================================================================

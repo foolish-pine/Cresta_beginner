@@ -28,7 +28,8 @@ if (!empty($_POST['back'])) {
   $auto_reply_text .= "氏名：" . $_POST['name'] . "\n";
   $auto_reply_text .= "電話番号：" . $_POST['tel'] . "\n";
   $auto_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
-  $auto_reply_text .= "お問い合わせ内容：" . $_POST['message'] . "\n\n";
+  $auto_reply_text .= "お問い合わせ内容：\n" . $_POST['message'] . "\n\n";
+  $auto_reply_text .= "このメールは以下のサイトのお問い合わせフォームから送信されました。\nhttps://cresta-beginner.foolish-pine.com/index.php";
 
   mb_send_mail($_POST['email'], $auto_reply_subject, $auto_reply_text, $header);
 
@@ -40,7 +41,8 @@ if (!empty($_POST['back'])) {
   $admin_reply_text .= "氏名：" . $_POST['name'] . "\n";
   $admin_reply_text .= "電話番号：" . $_POST['tel'] . "\n";
   $admin_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
-  $admin_reply_text .= "お問い合わせ内容：" . $_POST['message'] . "\n\n";
+  $admin_reply_text .= "お問い合わせ内容：\n" . $_POST['message'] . "\n\n";
+  $admin_reply_text .= "このメールは以下のサイトのお問い合わせフォームから送信されました。\nhttps://cresta-beginner.foolish-pine.com/index.php";
 
   mb_send_mail($_POST['email'], $admin_reply_subject, $admin_reply_text, $header);
 }
@@ -81,10 +83,10 @@ if (!empty($_POST['back'])) {
         </div>
         <nav class="p-header__nav">
           <ul class="p-header__list">
-            <li class="p-header__item"><a class="js-smoothscroll" href="#about">About</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#service">Service</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#news">News</a></li>
-            <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#about">About</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#service">Service</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#news">News</a></li>
+            <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#contact">Contact</a></li>
           </ul>
         </nav>
         <a class="p-header__menu">
@@ -113,7 +115,7 @@ if (!empty($_POST['back'])) {
               <label for="email">メールアドレス</label><br>
               <input class="p-contact__textbox" type="text" id="email" name="email" value="<?php if( !empty($_POST['email']) ){ echo $_POST['email']; } ?>" required />
             </div>
-            <div class="p-contact__messageArea">
+            <div class="p-contact__textarea">
               <label for="message">お問い合わせ内容</label><br>
               <textarea id="message" name="message" required><?php if( !empty($_POST['message']) ){ echo $_POST['message']; } ?></textarea>
             </div>
@@ -123,36 +125,39 @@ if (!empty($_POST['back'])) {
           </form>
         <?php elseif ($page_flag === 1) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+          <p class="p-contact__text--confirmation c-text">以下の内容で送信します。よろしいですか？</p>
           <form action="" method="post">
             <div>
               <label for="name">担当者名</label><br>
               <?php if (isset($_POST['name'])) {
-                echo $_POST['name'];
+                echo '<div class="p-contact__textbox--confirmation">' . $_POST['name'] . '</div>';
               } ?>
             </div>
             <div>
               <label for="tel">電話番号</label><br>
               <?php if (isset($_POST['tel'])) {
-                echo $_POST['tel'];
+                echo '<div class="p-contact__textbox--confirmation">' . $_POST['tel'] . '</div>';
               } ?>
             </div>
             <div>
               <label for="email">メールアドレス</label><br>
               <?php if (isset($_POST['email'])) {
-                echo $_POST['email'];
+                echo '<div class="p-contact__textbox--confirmation">' . $_POST['email'] . '</div>';
               } ?>
             </div>
-            <div class="p-contact__messageArea">
+            <div class="p-contact__textarea">
               <label for="message">お問い合わせ内容</label><br>
               <?php if (isset($_POST['message'])) {
-                echo $_POST['message'];
+                echo '<div class="p-contact__textarea--confirmation">' . nl2br($_POST['message']) . '</div>';
               } ?>
             </div>
-            <div class="p-contact__button c-button">
-              <input type="submit" name="submit" value="送信">
-            </div>
-            <div class="p-contact__button c-button">
-              <input type="submit" name="back" value="戻る">
+            <div class="p-contact__buttonContainer">
+              <div class="p-contact__button p-contact__button--back c-button">
+                <input type="submit" name="back" value="戻る">
+              </div>
+              <div class="p-contact__button c-button">
+                <input type="submit" name="submit" value="送信">
+              </div>
             </div>
             <input type="hidden" name="name" value="<?php echo $_POST['name'] ?>">
             <input type="hidden" name="tel" value="<?php echo $_POST['tel'] ?>">
