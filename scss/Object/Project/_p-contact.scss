@@ -61,13 +61,13 @@
 	}
 
 	&__errorList {
+		margin-bottom: 30px;
 		padding: 10px 30px;
+		border: 1px solid #ff2e5a;
+		border-radius: 5px;
 		color: #ff2e5a;
 		font-size: 1.9rem;
 		text-align: left;
-		border: 1px solid #ff2e5a;
-		border-radius: 5px;
-		margin-bottom: 30px;
 	}
 
 	&__textarea--confirmation {

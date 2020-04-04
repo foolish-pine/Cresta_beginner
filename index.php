@@ -1,14 +1,28 @@
 <?php
-//クリックジャッキング対策
+// クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 $clean = array();
 $error = array();
 
-//サニタイズ
+// // トークン生成
+// if (!isset($_SESSION['token'])) {
+//   $_SESSION['token'] = sha1(random_bytes(30));
+// }
+
+// サニタイズ
 if(!empty($_POST)) {
   foreach($_POST as $key => $value) {
     $clean[$key] = htmlspecialchars($value, ENT_QUOTES,'UTF-8');
   }
+}
+
+// 前後にある半角全角スペースを削除する関数
+function spaceTrim ($str) {
+  // 行頭
+  $str = preg_replace('/^[ 　]+/u', '', $str);
+  // 末尾
+  $str = preg_replace('/[ 　]+$/u', '', $str);
+  return $str;
 }
 
 ?>
@@ -163,7 +177,7 @@ if(!empty($_POST)) {
             <textarea id="message" name="message" required></textarea>
           </div>
           <div class="p-contact__button c-button">
-            <input type="confirmation" value="確認画面へ">
+            <input type="submit" name="confirmation" value="確認画面へ">
           </div>
         </form>
       </div>
