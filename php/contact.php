@@ -22,32 +22,36 @@ function spaceTrim ($str) {
   return $str;
 }
 
-// tokenを変数に入れる
-$token = $_POST['token'];
-
-// トークンを確認し、確認画面を表示
-if(!(hash_equals($token, $_SESSION['token']) && !empty($token))) {
-    echo "不正アクセスの可能性があります";
-    exit();
-}
 
 if (!empty($clean['back'])) {
   $page_flag = 0;
-
+  
+  // トークン生成
+  if (!isset($_SESSION['token'])) {
+    $_SESSION['token'] = sha1(random_bytes(30));
+  }
+  
 } elseif (!empty($clean['confirmation'])) {
+  // tokenを変数に入れる
+  $token = $_POST['token'];
 
+  // トークンを確認し、確認画面を表示
+  if(!(hash_equals($token, $_SESSION['token']) && !empty($token))) {
+      echo "不正アクセスの可能性があります";
+      exit();
+  }
+  
   $error = validation($clean);
 
   if(empty($error)) {
     $page_flag = 1;
 
     // セッションの書き込み
-    session_start();
     $_SESSION['page'] = true;
   }
 
 } elseif (!empty($clean['submit'])) {
-  session_start();
+  
   if(!empty($_SESSION['page']) && $_SESSION['page'] === true) {
 
     // セッションの削除
@@ -182,6 +186,7 @@ function validation($data) {
             </ul>
           <?php endif; ?>
           <form action="" method="post">
+          <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
             <div>
               <label for="name">担当者名</label><br>
               <input class="p-contact__textbox" type="text" id="name" name="name" value="<?php if( !empty($clean['name']) ){ echo $clean['name']; } ?>" required/>
