@@ -1,5 +1,14 @@
 <?php
+header('X-FRAME-OPTIONS: SAMEORIGIN');
 $page_flag = 1;
+$clean = array();
+
+//サニタイズ
+if(!empty($_POST)) {
+  foreach($_POST as $key => $value) {
+    $clean[$key] = htmlspecialchars($value, ENT_QUOTES);
+  }
+}
 
 if (!empty($_POST['back'])) {
   $page_flag = 0;
