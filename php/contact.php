@@ -72,7 +72,7 @@ if (!empty($clean['back'])) {
   $auto_reply_subject = 'お問い合わせありがとうございます。';
   
   $auto_reply_text = "※※※このメールはテストメールです※※※\n\n";
-  $auto_reply_text .= "この度は、お問い合わせいただきありがとうございます。下記の内容でお問い合わせを受け付けました。\n\n";
+  $auto_reply_text .= "この度は、お問い合わせいただきありがとうございます。\n下記の内容でお問い合わせを受け付けました。\n\n";
   $auto_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
   $auto_reply_text .= "氏名：" . $clean['name'] . "\n";
   $auto_reply_text .= "電話番号：" . $clean['tel'] . "\n";
