@@ -152,7 +152,7 @@ function escape($str)
             <label for="email">メールアドレス</label><br>
             <input class="p-contact__textbox" type="text" id="email" name="email" required />
           </div>
-          <div class="p-contact__messageArea">
+          <div class="p-contact__textarea">
             <label for="message">お問い合わせ内容</label><br>
             <textarea id="message" name="message" required></textarea>
           </div>
