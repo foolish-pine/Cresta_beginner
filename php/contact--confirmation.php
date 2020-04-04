@@ -1,15 +1,33 @@
 <?php
-//クリックジャッキング対策
+// クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 $page_flag = 0;
 $clean = array();
 
-//サニタイズ
+// サニタイズ
 if(!empty($_POST)) {
   foreach($_POST as $key => $value) {
     $clean[$key] = htmlspecialchars($value, ENT_QUOTES,'UTF-8');
   }
 }
+
+// 前後にある半角全角スペースを削除する関数
+function spaceTrim ($str) {
+  // 行頭
+  $str = preg_replace('/^[ 　]+/u', '', $str);
+  // 末尾
+  $str = preg_replace('/[ 　]+$/u', '', $str);
+  return $str;
+}
+
+// // tokenを変数に入れる
+// $token = $_POST['token'];
+
+// // トークンを確認し、確認画面を表示
+// if(!(hash_equals($token, $_SESSION['token']) && !empty($token))) {
+//     echo "不正アクセスの可能性があります";
+//     exit();
+// }
 
 if (!empty($clean['back'])) {
   $page_flag = 0;
@@ -20,23 +38,33 @@ if (!empty($clean['back'])) {
 
   if(empty($error)) {
     $page_flag = 1;
+
+    // セッションの書き込み
+    session_start();
+    $_SESSION['page'] = true;
   }
 
 } elseif (!empty($clean['submit'])) {
-  $page_flag = 2;
+  session_start();
+  if(!empty($_SESSION['page']) && $_SESSION['page'] === true) {
 
-  $auto_reply_subject = null;
-  $auto_reply_text = null;
-  $admin_reply_subject = null;
-  $admin_reply_text = null;
-  date_default_timezone_set('Asia/Tokyo');
-
-  $header = "MIME-Version: 1.0\n";
-  $header .= "From: Cresta Design <noreply@test.com>\n";
+    // セッションの削除
+    unset($_SESSION['page']);
+    
+    $page_flag = 2;
+    
+    $auto_reply_subject = null;
+    $auto_reply_text = null;
+    $admin_reply_subject = null;
+    $admin_reply_text = null;
+    date_default_timezone_set('Asia/Tokyo');
+    
+    $header = "MIME-Version: 1.0\n";
+    $header .= "From: Cresta Design <noreply@test.com>\n";
   $header .= "Reply-To: Cresta Design <noreply@test.com>\n";
-
+  
   $auto_reply_subject = 'お問い合わせありがとうございます。';
-
+  
   $auto_reply_text = "※※※このメールはテストメールです※※※\n\n";
   $auto_reply_text .= "この度は、お問い合わせいただきありがとうございます。下記の内容でお問い合わせを受け付けました。\n\n";
   $auto_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
@@ -46,10 +74,11 @@ if (!empty($clean['back'])) {
   $auto_reply_text .= "お問い合わせ内容：\n" . $clean['message'] . "\n\n";
   $auto_reply_text .= "このメールは以下のサイトのお問い合わせフォームから送信されました。\nhttps://cresta-beginner.foolish-pine.com/index.php";
 
+  // 利用者へメール送信
   mb_send_mail($clean['email'], $auto_reply_subject, $auto_reply_text, $header);
-
+  
   $admin_reply_subject = "お問い合わせ受け付けました";
-
+  
   $admin_reply_text = "※※※このメールはテストメールです※※※\n\n";
   $admin_reply_text .= "下記の内容でお問い合わせがありました。\n\n";
   $admin_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
@@ -59,23 +88,28 @@ if (!empty($clean['back'])) {
   $admin_reply_text .= "お問い合わせ内容：\n" . $clean['message'] . "\n\n";
   $admin_reply_text .= "このメールは以下のサイトのお問い合わせフォームから送信されました。\nhttps://cresta-beginner.foolish-pine.com/index.php";
 
+  // 管理者へメール送信
   mb_send_mail($clean['email'], $admin_reply_subject, $admin_reply_text, $header);
+
+  } else {
+    $page_flag = 0;
+  }
 }
 
 function validation($data) {
   $error = array();
 
-  //氏名のバリデーション
+  // 氏名のバリデーション
   if (20 < mb_strlen($data['name'])) {
     $error[] = "「担当者名」は20文字以内で入力してください。";
   }
   
-  //電話番号のバリデーション
+  // 電話番号のバリデーション
   if (!preg_match('/^[0-9-]{6,9}$|^[0-9-]{13}$/', $data['tel'])) {
     $error[] = "「電話番号」は正しい形式で入力してください。";
   }
   
-  //メールアドレスのバリデーション
+  // メールアドレスのバリデーション
   if (!preg_match('/^[0-9a-z_.\/?-]+@([0-9a-z-]+\.)+[0-9a-z-]+$/', $data['email'])) {
     $error[] = "「メールアドレス」は正しい形式で入力してください。";
   }
