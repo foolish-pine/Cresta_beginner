@@ -1,22 +1,28 @@
 <?php
+//クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
-$page_flag = 1;
+$page_flag = 0;
 $clean = array();
 
 //サニタイズ
 if(!empty($_POST)) {
   foreach($_POST as $key => $value) {
-    $clean[$key] = htmlspecialchars($value, ENT_QUOTES);
+    $clean[$key] = htmlspecialchars($value, ENT_QUOTES,'UTF-8');
   }
 }
 
-if (!empty($_POST['back'])) {
+if (!empty($clean['back'])) {
   $page_flag = 0;
 
-} elseif (!empty($_POST['confirmation'])) {
-  $page_flag = 1;
+} elseif (!empty($clean['confirmation'])) {
 
-} elseif (!empty($_POST['submit'])) {
+  $error = validation($clean);
+
+  if(empty($error)) {
+    $page_flag = 1;
+  }
+
+} elseif (!empty($clean['submit'])) {
   $page_flag = 2;
 
   $auto_reply_subject = null;
@@ -34,26 +40,47 @@ if (!empty($_POST['back'])) {
   $auto_reply_text = "※※※このメールはテストメールです※※※\n\n";
   $auto_reply_text .= "この度は、お問い合わせいただきありがとうございます。下記の内容でお問い合わせを受け付けました。\n\n";
   $auto_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
-  $auto_reply_text .= "氏名：" . $_POST['name'] . "\n";
-  $auto_reply_text .= "電話番号：" . $_POST['tel'] . "\n";
-  $auto_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
-  $auto_reply_text .= "お問い合わせ内容：\n" . $_POST['message'] . "\n\n";
+  $auto_reply_text .= "氏名：" . $clean['name'] . "\n";
+  $auto_reply_text .= "電話番号：" . $clean['tel'] . "\n";
+  $auto_reply_text .= "メールアドレス：" . $clean['email'] . "\n";
+  $auto_reply_text .= "お問い合わせ内容：\n" . $clean['message'] . "\n\n";
   $auto_reply_text .= "このメールは以下のサイトのお問い合わせフォームから送信されました。\nhttps://cresta-beginner.foolish-pine.com/index.php";
 
-  mb_send_mail($_POST['email'], $auto_reply_subject, $auto_reply_text, $header);
+  mb_send_mail($clean['email'], $auto_reply_subject, $auto_reply_text, $header);
 
   $admin_reply_subject = "お問い合わせ受け付けました";
 
   $admin_reply_text = "※※※このメールはテストメールです※※※\n\n";
   $admin_reply_text .= "下記の内容でお問い合わせがありました。\n\n";
   $admin_reply_text .= "お問い合わせ日時：" . date("Y-m-d H:i") . "\n";
-  $admin_reply_text .= "氏名：" . $_POST['name'] . "\n";
-  $admin_reply_text .= "電話番号：" . $_POST['tel'] . "\n";
-  $admin_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
-  $admin_reply_text .= "お問い合わせ内容：\n" . $_POST['message'] . "\n\n";
+  $admin_reply_text .= "氏名：" . $clean['name'] . "\n";
+  $admin_reply_text .= "電話番号：" . $clean['tel'] . "\n";
+  $admin_reply_text .= "メールアドレス：" . $clean['email'] . "\n";
+  $admin_reply_text .= "お問い合わせ内容：\n" . $clean['message'] . "\n\n";
   $admin_reply_text .= "このメールは以下のサイトのお問い合わせフォームから送信されました。\nhttps://cresta-beginner.foolish-pine.com/index.php";
 
-  mb_send_mail($_POST['email'], $admin_reply_subject, $admin_reply_text, $header);
+  mb_send_mail($clean['email'], $admin_reply_subject, $admin_reply_text, $header);
+}
+
+function validation($data) {
+  $error = array();
+
+  //氏名のバリデーション
+  if (20 < mb_strlen($data['name'])) {
+    $error[] = "「担当者名」は20文字以内で入力してください。";
+  }
+  
+  //電話番号のバリデーション
+  if (!preg_match('/^[0-9-]{6,9}$|^[0-9-]{13}$/', $data['tel'])) {
+    $error[] = "「電話番号」は正しい形式で入力してください。";
+  }
+  
+  //メールアドレスのバリデーション
+  if (!preg_match('/^[0-9a-z_.\/?-]+@([0-9a-z-]+\.)+[0-9a-z-]+$/', $data['email'])) {
+    $error[] = "「メールアドレス」は正しい形式で入力してください。";
+  }
+
+  return $error;
 }
 ?>
 
@@ -111,22 +138,29 @@ if (!empty($_POST['back'])) {
       <div class="p-contact__inner">
         <?php if ($page_flag === 0) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+          <?php if (!empty($error)): ?>
+            <ul class="p-contact__errorList">
+            <?php foreach ($error as $value): ?>
+              <li><?php echo $value; ?></li>
+            <?php endforeach; ?>
+            </ul>
+          <?php endif; ?>
           <form action="" method="post">
             <div>
               <label for="name">担当者名</label><br>
-              <input class="p-contact__textbox" type="text" id="name" name="name" value="<?php if( !empty($_POST['name']) ){ echo $_POST['name']; } ?>" required/>
+              <input class="p-contact__textbox" type="text" id="name" name="name" value="<?php if( !empty($clean['name']) ){ echo $clean['name']; } ?>" required/>
             </div>
             <div>
               <label for="tel">電話番号</label><br>
-              <input class="p-contact__textbox" type="text" id="tel" name="tel" value="<?php if( !empty($_POST['tel']) ){ echo $_POST['tel']; } ?>" required />
+              <input class="p-contact__textbox" type="text" id="tel" name="tel" value="<?php if( !empty($clean['tel']) ){ echo $clean['tel']; } ?>" required />
             </div>
             <div>
               <label for="email">メールアドレス</label><br>
-              <input class="p-contact__textbox" type="text" id="email" name="email" value="<?php if( !empty($_POST['email']) ){ echo $_POST['email']; } ?>" required />
+              <input class="p-contact__textbox" type="text" id="email" name="email" value="<?php if( !empty($clean['email']) ){ echo $clean['email']; } ?>" required />
             </div>
             <div class="p-contact__textarea">
               <label for="message">お問い合わせ内容</label><br>
-              <textarea id="message" name="message" required><?php if( !empty($_POST['message']) ){ echo $_POST['message']; } ?></textarea>
+              <textarea id="message" name="message" required><?php if( !empty($clean['message']) ){ echo $clean['message']; } ?></textarea>
             </div>
             <div class="p-contact__button c-button">
               <input type="submit" name="confirmation" value="確認画面へ">
@@ -138,26 +172,26 @@ if (!empty($_POST['back'])) {
           <form action="" method="post">
             <div>
               <label for="name">担当者名</label><br>
-              <?php if (isset($_POST['name'])) {
-                echo '<div class="p-contact__textbox--confirmation">' . $_POST['name'] . '</div>';
+              <?php if (isset($clean['name'])) {
+                echo '<div class="p-contact__textbox--confirmation">' . $clean['name'] . '</div>';
               } ?>
             </div>
             <div>
               <label for="tel">電話番号</label><br>
-              <?php if (isset($_POST['tel'])) {
-                echo '<div class="p-contact__textbox--confirmation">' . $_POST['tel'] . '</div>';
+              <?php if (isset($clean['tel'])) {
+                echo '<div class="p-contact__textbox--confirmation">' . $clean['tel'] . '</div>';
               } ?>
             </div>
             <div>
               <label for="email">メールアドレス</label><br>
-              <?php if (isset($_POST['email'])) {
-                echo '<div class="p-contact__textbox--confirmation">' . $_POST['email'] . '</div>';
+              <?php if (isset($clean['email'])) {
+                echo '<div class="p-contact__textbox--confirmation">' . $clean['email'] . '</div>';
               } ?>
             </div>
             <div class="p-contact__textarea">
               <label for="message">お問い合わせ内容</label><br>
-              <?php if (isset($_POST['message'])) {
-                echo '<div class="p-contact__textarea--confirmation">' . nl2br($_POST['message']) . '</div>';
+              <?php if (isset($clean['message'])) {
+                echo '<div class="p-contact__textarea--confirmation">' . nl2br($clean['message']) . '</div>';
               } ?>
             </div>
             <div class="p-contact__buttonContainer">
@@ -168,10 +202,10 @@ if (!empty($_POST['back'])) {
                 <input type="submit" name="submit" value="送信">
               </div>
             </div>
-            <input type="hidden" name="name" value="<?php echo $_POST['name'] ?>">
-            <input type="hidden" name="tel" value="<?php echo $_POST['tel'] ?>">
-            <input type="hidden" name="email" value="<?php echo $_POST['email'] ?>">
-            <input type="hidden" name="message" value="<?php echo $_POST['message'] ?>">
+            <input type="hidden" name="name" value="<?php echo $clean['name'] ?>">
+            <input type="hidden" name="tel" value="<?php echo $clean['tel'] ?>">
+            <input type="hidden" name="email" value="<?php echo $clean['email'] ?>">
+            <input type="hidden" name="message" value="<?php echo $clean['message'] ?>">
           </form>
         <?php elseif ($page_flag === 2) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">送信が完了しました。</h2>

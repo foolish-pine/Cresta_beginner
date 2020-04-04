@@ -1,11 +1,13 @@
 <?php
+//クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 $clean = array();
+$error = array();
 
 //サニタイズ
 if(!empty($_POST)) {
   foreach($_POST as $key => $value) {
-    $clean[$key] = htmlspecialchars($value, ENT_QUOTES);
+    $clean[$key] = htmlspecialchars($value, ENT_QUOTES,'UTF-8');
   }
 }
 
@@ -161,7 +163,7 @@ if(!empty($_POST)) {
             <textarea id="message" name="message" required></textarea>
           </div>
           <div class="p-contact__button c-button">
-            <input type="submit" value="確認画面へ">
+            <input type="confirmation" value="確認画面へ">
           </div>
         </form>
       </div>
