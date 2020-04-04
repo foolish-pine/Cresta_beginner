@@ -1,13 +1,15 @@
 <?php
+session_start();
+
 // クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 $clean = array();
 $error = array();
 
-// // トークン生成
-// if (!isset($_SESSION['token'])) {
-//   $_SESSION['token'] = sha1(random_bytes(30));
-// }
+// トークン生成
+if (!isset($_SESSION['token'])) {
+  $_SESSION['token'] = sha1(random_bytes(30));
+}
 
 // サニタイズ
 if(!empty($_POST)) {
@@ -159,7 +161,8 @@ function spaceTrim ($str) {
     <section id="contact" class="p-contact">
       <div class="p-contact__inner">
         <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
-        <form action="php/contact--confirmation.php" method="post">
+        <form action="php/contact.php" method="post">
+          <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
           <div>
             <label for="name">担当者名</label><br>
             <input class="p-contact__textbox" type="text" id="name" name="name" required />

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
 $page_flag = 0;
@@ -20,14 +22,14 @@ function spaceTrim ($str) {
   return $str;
 }
 
-// // tokenを変数に入れる
-// $token = $_POST['token'];
+// tokenを変数に入れる
+$token = $_POST['token'];
 
-// // トークンを確認し、確認画面を表示
-// if(!(hash_equals($token, $_SESSION['token']) && !empty($token))) {
-//     echo "不正アクセスの可能性があります";
-//     exit();
-// }
+// トークンを確認し、確認画面を表示
+if(!(hash_equals($token, $_SESSION['token']) && !empty($token))) {
+    echo "不正アクセスの可能性があります";
+    exit();
+}
 
 if (!empty($clean['back'])) {
   $page_flag = 0;
