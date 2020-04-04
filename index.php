@@ -1,10 +1,14 @@
 <?php
 header('X-FRAME-OPTIONS: SAMEORIGIN');
+$clean = array();
 
-function escape($str)
-{
-  return htmlspecialchars($str, ENT_QUOTES, 'UTF-8');
+//サニタイズ
+if(!empty($_POST)) {
+  foreach($_POST as $key => $value) {
+    $clean[$key] = htmlspecialchars($value, ENT_QUOTES);
+  }
 }
+
 ?>
 
 <!DOCTYPE html>
