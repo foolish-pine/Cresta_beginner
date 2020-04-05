@@ -176,6 +176,7 @@ function validation($data) {
   <main class="l-main">
     <section id="contact" class="p-contact">
       <div class="p-contact__inner">
+        <!-- お問い合わせフォーム入力ページ -->
         <?php if ($page_flag === 0) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
           <?php if (!empty($error)): ?>
@@ -207,6 +208,7 @@ function validation($data) {
               <input type="submit" name="confirmation" value="確認画面へ">
             </div>
           </form>
+        <!-- お問い合わせフォーム確認ページ -->
         <?php elseif ($page_flag === 1) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
           <p class="p-contact__text--confirmation c-text">以下の内容で送信します。よろしいですか？<br>※利用者宛と管理者宛のメールが入力されたメールアドレスに送信されます。</p>
@@ -248,6 +250,7 @@ function validation($data) {
             <input type="hidden" name="email" value="<?php echo $clean['email'] ?>">
             <input type="hidden" name="message" value="<?php echo $clean['message'] ?>">
           </form>
+        <!-- お問い合わせフォーム完了ページ -->
         <?php elseif ($page_flag === 2) : ?>
           <h2 class="p-contact__sectionTitle c-text__sectionTitle">送信が完了しました。</h2>
           <div class="p-contact__button c-button">
