@@ -22,29 +22,24 @@ $(function () {
       prewidth = nowWidth;
     }, 200);
   });
-});
 
-// ヘッダー
-$(function () {
+  // ヘッダー
   $(".p-header__menu").on("click", function () {
     $(".p-header__menuLine").stop(true).toggleClass("active");
     $(".p-header__nav").stop(true).fadeToggle();
   });
-});
 
-$(function () {
   $(".p-header__nav, .p-header__logo").on("click", function () {
     if ($(".p-header__menuLine").hasClass("active")) {
       $(".p-header__menuLine").stop(true).toggleClass("active");
       $(".p-header__nav").stop(true).fadeToggle();
     }
   });
-});
 
-// ---------------------------------------------
-// スムーススクロール（ページ内リンク）
-// ---------------------------------------------
-$(function () {
+  // ---------------------------------------------
+  // スムーススクロール（ページ内リンク）
+  // ---------------------------------------------
+
   $(".js-smoothscroll").click(function () {
     var speed = 500,
       href = $(this).attr("href"),
