@@ -63,20 +63,20 @@ function spaceTrim ($str) {
           <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a class="p-header__menu">
+      <button class="p-header__menu">
         <span class="p-header__menuLine"></span>
         <span class="p-header__menuLine"></span>
         <span class="p-header__menuLine"></span>
-      </a>
+      </button>
     </div>
   </header>
   <main class="l-main">
-    <section class="p-mainVisual">
+    <div class="p-mainVisual">
       <div class="p-mainVisual__catch">
         <p>Cresta Design.</p>
       </div>
-    </section>
-    <section id="about" class="p-about">
+    </div>
+    <div id="about" class="p-about">
       <div class="p-about__inner">
         <h2 class="c-text__sectionTitle">About</h2>
         <h3 class="c-text__sectionSubTitle">
@@ -87,8 +87,8 @@ function spaceTrim ($str) {
           近年、ミニマルなデザインが流行しています。そこで弊社では、クライアント企業様新規サービス等の課題に対してミニマルで洗練されたデザインを実現させることで解決のサポートを致します。もちろん全てのサービスにおいてミニマルなデザインが課題解決になるわけではないので、課題や今後のサービスの展開等しっかりとヒアリングを行なった上でご提案させて頂きます。
         </p>
       </div>
-    </section>
-    <section id="service" class="p-service">
+    </div>
+    <div id="service" class="p-service">
       <div class="p-service__inner">
         <h2 class="p-service__sectionTitle c-text__sectionTitle">Service</h2>
         <div class="p-service__container">
@@ -120,8 +120,8 @@ function spaceTrim ($str) {
           </div>
         </div>
       </div>
-    </section>
-    <section id="news" class="p-news">
+    </div>
+    <div id="news" class="p-news">
       <div class="p-news__inner">
         <h2 class="c-text__sectionTitle">News</h2>
         <div class="p-news__container">
@@ -151,8 +151,8 @@ function spaceTrim ($str) {
           </div>
         </div>
       </div>
-    </section>
-    <section id="contact" class="p-contact">
+    </div>
+    <div id="contact" class="p-contact">
       <div class="p-contact__inner">
         <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
         <form action="contact/index.php" method="post">
@@ -178,7 +178,7 @@ function spaceTrim ($str) {
           </div>
         </form>
       </div>
-    </section>
+    </div>
   </main>
   <footer class="l-footer">
     <div class="p-footer">

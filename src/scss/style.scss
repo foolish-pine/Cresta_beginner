@@ -42,29 +42,18 @@
   レイアウト
 ================================================================ */
 
-@import "Layout/l-header", "Layout/l-main", "Layout/l-footer";
+@import "Layout/**";
 
 /* ===============================================================
   Component
   コンポーネント
 ================================================================ */
 
-@import "Object/Component/c-button", "Object/Component/c-text",
-  "Object/Component/c-card", "Object/Component/c-alert";
+@import "Object/Component/**";
 
 /* ===============================================================
   Project
   プロジェクト
 ================================================================ */
 
-@import "Object/Project/p-header", "Object/Project/p-mainVisual",
-  "Object/Project/p-about", "Object/Project/p-service", "Object/Project/p-news",
-  "Object/Project/p-contact", "Object/Project/p-footer";
-
-.test {
-  margin: 10px;
-  font-size: 3rem;
-  font-weight: 700;
-  color: red;
-  background-color: #000;
-}
+@import "Object/Project/**";

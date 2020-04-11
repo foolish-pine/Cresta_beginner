@@ -156,15 +156,15 @@ function validation($data)
           <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
         </ul>
       </nav>
-      <a class="p-header__menu">
+      <button class="p-header__menu">
         <span class="p-header__menuLine"></span>
         <span class="p-header__menuLine"></span>
         <span class="p-header__menuLine"></span>
-      </a>
+      </button>
     </div>
   </header>
   <main class="l-main">
-    <section id="contact" class="p-contact">
+    <div id="contact" class="p-contact">
       <div class="p-contact__inner">
         <!-- お問い合わせフォーム入力ページ -->
         <?php if ($page_flag === 0) : ?>
@@ -194,7 +194,7 @@ function validation($data)
             <label for="message">お問い合わせ内容</label><br>
             <textarea id="message" name="message" required><?php if( !empty($clean['message']) ){ echo $clean['message']; } ?></textarea>
           </div>
-          <div class="p-contact__button c-button--default">
+          <div class="p-contact__button c-button">
             <input type="submit" name="confirmation" value="確認画面へ">
           </div>
         </form>
@@ -228,10 +228,10 @@ function validation($data)
             } ?>
           </div>
           <div class="p-contact__buttonContainer">
-            <div class="p-contact__button p-contact__button--back c-button--back">
+            <div class="p-contact__button p-contact__button--back c-button">
               <input type="submit" name="back" value="戻る">
             </div>
-            <div class="p-contact__button c-button--default">
+            <div class="p-contact__button c-button">
               <input type="submit" name="submit" value="送信">
             </div>
           </div>
@@ -243,12 +243,12 @@ function validation($data)
         <!-- お問い合わせフォーム完了ページ -->
         <?php elseif ($page_flag === 2) : ?>
         <h2 class="p-contact__sectionTitle c-text__sectionTitle">送信が完了しました。</h2>
-        <div class="p-contact__button c-button--top">
+        <div class="p-contact__button c-button">
           <a href="../index.php">トップへ戻る</a>
         </div>
         <?php endif; ?>
       </div>
-    </section>
+    </div>
   </main>
   <footer class="l-footer">
     <div class="p-footer">
