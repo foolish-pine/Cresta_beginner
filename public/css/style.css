@@ -285,6 +285,10 @@ img {
   max-width: 100%;
 }
 
+button:focus {
+  outline: 0;
+}
+
 /* ================================================================
   メディアクエリ
    ================================================================ */
@@ -475,8 +479,7 @@ img {
   About
    ================================================================ */
 .p-about {
-  padding-top: 175px;
-  margin-top: -75px;
+  padding-top: 100px;
 }
 
 .p-about__inner {
@@ -778,6 +781,7 @@ img {
 
 .p-header__menuLine {
   position: absolute;
+  right: 0;
   width: 25px;
   height: 2px;
   background-color: #fff;

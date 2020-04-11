@@ -44,7 +44,8 @@ $(function () {
     var speed = 500,
       href = $(this).attr("href"),
       target = $(href == "#" || href == "" ? "html" : href),
-      position = target.offset().top;
+      headerHeight = $(".p-header").outerHeight(),
+      position = target.offset().top - headerHeight;
     $("html, body").animate({ scrollTop: position }, speed);
   });
 });
