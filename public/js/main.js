@@ -8,7 +8,7 @@ $(function () {
   // ---------------------------------------------
   var mq = window.matchMedia("screen and (max-width:767px)");
 
-  function checkBreakPoint(mq) {
+  $(window).on("resize", function () {
     if (mq.matches) {
       // 画面幅767px以下のとき
       // navを非表示にする
@@ -20,9 +20,7 @@ $(function () {
       // navを表示させる
       $(".p-header__nav").show();
     }
-  }
-  mq.addListener(checkBreakPoint);
-  checkBreakPoint(mq);
+  });
 
   // メニューアイコンをクリックしてnavを開閉する
   $(".p-header__menu").on("click", function () {
