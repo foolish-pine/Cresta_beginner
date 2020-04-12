@@ -86,7 +86,7 @@ gulp.task("ejs", (done) => {
 gulp.task("watch", function (done) {
   gulp.watch("./src/scss/**/*.scss", gulp.task("sass")); //sassが更新されたらgulp sassを実行
   gulp.watch("./src/scss/**/*.scss", gulp.task("bs-reload")); //sassが更新されたらbs-reloadを実行
-  gulp.watch("./src/js/*.js", gulp.task("bs-reload")); //jsが更新されたらbs-relaodを実行
+  gulp.watch("./public/js/*.js", gulp.task("bs-reload")); //jsが更新されたらbs-relaodを実行
   gulp.watch("./src/ejs/**/*.ejs", gulp.task("ejs")); //ejsが更新されたらgulp-ejsを実行
   gulp.watch("./src/ejs/**/*.ejs", gulp.task("bs-reload")); //ejsが更新されたらbs-reloadを実行
   gulp.watch("./public/*.php", gulp.task("bs-reload")); //phpが更新されたらbs-reloadを実行
