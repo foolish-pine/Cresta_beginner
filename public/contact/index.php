@@ -123,6 +123,7 @@ function validation($data)
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -150,10 +151,10 @@ function validation($data)
       </div>
       <nav class="p-header__nav">
         <ul class="p-header__list">
-          <li class="p-header__item"><a class="js-smoothscroll" href="#about">About</a></li>
-          <li class="p-header__item"><a class="js-smoothscroll" href="#service">Service</a></li>
-          <li class="p-header__item"><a class="js-smoothscroll" href="#news">News</a></li>
-          <li class="p-header__item"><a class="js-smoothscroll" href="#contact">Contact</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#about">About</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#service">Service</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#news">News</a></li>
+          <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#contact">Contact</a></li>
         </ul>
       </nav>
       <button class="p-header__menu">
@@ -194,7 +195,7 @@ function validation($data)
             <label for="message">お問い合わせ内容</label><br>
             <textarea id="message" name="message" required><?php if( !empty($clean['message']) ){ echo $clean['message']; } ?></textarea>
           </div>
-          <div class="p-contact__button c-button">
+          <div class="p-contact__button c-button--default">
             <input type="submit" name="confirmation" value="確認画面へ">
           </div>
         </form>
@@ -228,10 +229,10 @@ function validation($data)
             } ?>
           </div>
           <div class="p-contact__buttonContainer">
-            <div class="p-contact__button p-contact__button--back c-button">
+            <div class="p-contact__button c-button--back">
               <input type="submit" name="back" value="戻る">
             </div>
-            <div class="p-contact__button c-button">
+            <div class="p-contact__button c-button--default">
               <input type="submit" name="submit" value="送信">
             </div>
           </div>
@@ -243,7 +244,7 @@ function validation($data)
         <!-- お問い合わせフォーム完了ページ -->
         <?php elseif ($page_flag === 2) : ?>
         <h2 class="p-contact__sectionTitle c-text__sectionTitle">送信が完了しました。</h2>
-        <div class="p-contact__button c-button">
+        <div class="p-contact__button c-button--top">
           <a href="../index.php">トップへ戻る</a>
         </div>
         <?php endif; ?>
@@ -258,8 +259,8 @@ function validation($data)
     </div>
   </footer>
   <!-- jQuery -->
-  <script src="js/jQuery/jquery-3.5.0.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="../js/jQuery/jquery-3.5.0.min.js"></script>
+  <script src="../js/main.js"></script>
 </body>
 
 </html>

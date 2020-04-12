@@ -273,6 +273,14 @@ html {
 }
 
 body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: "Roboto", "Noto Sans JP", "Hiragino Kaku Gothic ProN", sans-serif;
   font-size: 1.6rem;
 }
@@ -304,6 +312,7 @@ button:focus {
    ================================================================ */
 .l-footer {
   width: 100%;
+  margin-top: auto;
 }
 
 /* ================================================================
@@ -320,7 +329,6 @@ button:focus {
    ================================================================ */
 .l-main {
   width: 100%;
-  max-width: 1440px;
   padding-top: 75px;
   margin: 0 auto;
 }
@@ -600,24 +608,11 @@ button:focus {
   margin: 0 auto 50px;
 }
 
-.p-contact__button--back {
-  font-weight: 700;
-  color: #1b1310;
-  background-color: #fff;
-}
-
-.p-contact__button--back:hover {
-  font-weight: 700;
-  color: #1b1310;
-  background-color: #fff;
-}
-
 /* ================================================================
   フッター
    ================================================================ */
 .p-footer {
   width: 100%;
-  max-width: 1440px;
   height: 60px;
   margin: 0 auto;
   background-color: #1b1310;
@@ -655,7 +650,6 @@ button:focus {
 .p-header {
   position: relative;
   width: 100%;
-  max-width: 1440px;
   height: 75px;
   margin: 0 auto;
   background: #1b1310;
@@ -833,7 +827,6 @@ button:focus {
 
 @media print, screen and (min-width: 768px) {
   .p-mainVisual {
-    max-width: 1440px;
     height: 740px;
     margin: 0 auto;
     background-image: url(../img/fv-bgi@2x.jpg);

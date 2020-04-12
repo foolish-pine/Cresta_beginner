@@ -30,6 +30,7 @@ function spaceTrim ($str) {
 ?>
 
 
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -188,8 +189,8 @@ function spaceTrim ($str) {
     </div>
   </footer>
   <!-- jQuery -->
-  <script src="js/jQuery/jquery-3.5.0.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="./js/jQuery/jquery-3.5.0.min.js"></script>
+  <script src="./js/main.js"></script>
 </body>
 
 </html>

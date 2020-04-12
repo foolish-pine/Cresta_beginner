@@ -10,7 +10,6 @@
   background-size: cover;
 
   @include mq(pc) {
-    max-width: $max-width;
     height: 740px;
     margin: 0 auto;
     background-image: url(../img/fv-bgi@2x.jpg);
