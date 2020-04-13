@@ -158,9 +158,9 @@ function validation($data)
         </ul>
       </nav>
       <button class="p-header__menu">
-        <span class="p-header__menuLine"></span>
-        <span class="p-header__menuLine"></span>
-        <span class="p-header__menuLine"></span>
+        <span class="p-header__menu-line"></span>
+        <span class="p-header__menu-line"></span>
+        <span class="p-header__menu-line"></span>
       </button>
     </div>
   </header>
@@ -169,9 +169,9 @@ function validation($data)
       <div class="p-contact__inner">
         <!-- お問い合わせフォーム入力ページ -->
         <?php if ($page_flag === 0) : ?>
-        <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+        <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
         <?php if (!empty($error)): ?>
-        <ul class="p-contact__errorList">
+        <ul class="p-contact__error-list">
           <?php foreach ($error as $value): ?>
           <li><?php echo $value; ?></li>
           <?php endforeach; ?>
@@ -201,7 +201,7 @@ function validation($data)
         </form>
         <!-- お問い合わせフォーム確認ページ -->
         <?php elseif ($page_flag === 1) : ?>
-        <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+        <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
         <p class="p-contact__text--confirmation c-text">以下の内容で送信します。よろしいですか？<br>※利用者宛と管理者宛のメールが入力されたメールアドレスに送信されます。</p>
         <form action="" method="post">
           <div>
@@ -228,7 +228,7 @@ function validation($data)
               echo '<div class="p-contact__textarea--confirmation">' . nl2br($clean['message']) . '</div>';
             } ?>
           </div>
-          <div class="p-contact__buttonContainer">
+          <div class="p-contact__button-container">
             <div class="p-contact__button c-button--back">
               <input type="submit" name="back" value="戻る">
             </div>
@@ -243,7 +243,7 @@ function validation($data)
         </form>
         <!-- お問い合わせフォーム完了ページ -->
         <?php elseif ($page_flag === 2) : ?>
-        <h2 class="p-contact__sectionTitle c-text__sectionTitle">送信が完了しました。</h2>
+        <h2 class="p-contact__section-title c-text__section-title">送信が完了しました。</h2>
         <div class="p-contact__button c-button--top">
           <a href="../index.php">トップへ戻る</a>
         </div>

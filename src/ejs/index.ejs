@@ -33,15 +33,15 @@ function spaceTrim ($str) {
 <% scrollPath = ''; %>
 <%- include('common/_header'); %>
 <main class="l-main">
-  <div class="p-mainVisual">
-    <div class="p-mainVisual__catch">
+  <div class="p-main-visual">
+    <div class="p-main-visual__catch">
       <p>Cresta Design.</p>
     </div>
   </div>
   <div id="about" class="p-about">
     <div class="p-about__inner">
-      <h2 class="c-text__sectionTitle">About</h2>
-      <h3 class="c-text__sectionSubTitle">
+      <h2 class="c-text__section-title">About</h2>
+      <h3 class="c-text__section-subtitle">
         ミニマルで<br>
         洗練されたデザインを。
       </h3>
@@ -52,10 +52,10 @@ function spaceTrim ($str) {
   </div>
   <div id="service" class="p-service">
     <div class="p-service__inner">
-      <h2 class="p-service__sectionTitle c-text__sectionTitle">Service</h2>
+      <h2 class="p-service__section-title c-text__section-title">Service</h2>
       <div class="p-service__container">
-        <div class="p-service__textContainer">
-          <h3 class="p-service__subTitle c-text__sectionSubTitle">
+        <div class="p-service__text-container">
+          <h3 class="p-service__subtitle c-text__sectionSubTitle">
             リリース時のサポートで<br>
             サービスのブランディングを
           </h3>
@@ -68,8 +68,8 @@ function spaceTrim ($str) {
         </div>
       </div>
       <div class="p-service__container">
-        <div class="p-service__textContainer">
-          <h3 class="p-service__subTitle c-text__sectionSubTitle">
+        <div class="p-service__text-container">
+          <h3 class="p-service__subtitle c-text__section-subtitle">
             リリース後のサポートで<br>
             効果を最大化させる
           </h3>
@@ -85,7 +85,7 @@ function spaceTrim ($str) {
   </div>
   <div id="news" class="p-news">
     <div class="p-news__inner">
-      <h2 class="c-text__sectionTitle">News</h2>
+      <h2 class="c-text__section-title">News</h2>
       <div class="p-news__container">
         <div class="p-news__card c-card">
           <div class="c-card__image">
@@ -116,7 +116,7 @@ function spaceTrim ($str) {
   </div>
   <div id="contact" class="p-contact">
     <div class="p-contact__inner">
-      <h2 class="p-contact__sectionTitle c-text__sectionTitle">お問い合わせ</h2>
+      <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
       <form action="contact/index.php" method="post">
         <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
         <div>
