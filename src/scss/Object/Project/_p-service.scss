@@ -15,7 +15,7 @@
     }
   }
 
-  &__subTitle {
+  &__subtitle {
     margin-bottom: 20px;
 
     @include mq(pc) {
@@ -44,7 +44,7 @@
     }
   }
 
-  &__textContainer {
+  &__text-container {
     @include mq(pc) {
       width: calc((480 / 1030) * 100%);
       padding-top: 15px;

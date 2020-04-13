@@ -11,7 +11,7 @@ $(function () {
   var $header = $(".p-header"),
     $headerNav = $(".p-header__nav"),
     $headerMenu = $(".p-header__menu"),
-    $headerMenuLine = $(".p-header__menuLine");
+    $headerMenuLine = $(".p-header__menu-line");
 
   $(window).on("resize", function () {
     if (mq.matches) {
