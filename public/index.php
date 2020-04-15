@@ -94,7 +94,7 @@ function spaceTrim ($str) {
         <h2 class="p-service__section-title c-text__section-title">Service</h2>
         <div class="p-service__container">
           <div class="p-service__text-container">
-            <h3 class="p-service__subtitle c-text__sectionSubTitle">
+            <h3 class="p-service__subtitle c-text__section-subtitle">
               リリース時のサポートで<br>
               サービスのブランディングを
             </h3>
