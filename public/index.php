@@ -1,3 +1,4 @@
+<!-- コンタクトフォーム用PHPここから -->
 <?php
 session_start();
 
@@ -26,11 +27,14 @@ function spaceTrim ($str) {
   $str = preg_replace('/[ 　]+$/u', '', $str);
   return $str;
 }
-
 ?>
+<!-- コンタクトフォーム用PHPここまで -->
 
+<!-- 相対パス -->
 
+<!-- ナビゲーションリンクのパス -->
 
+<!-- ヘッダー読み込み -->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -49,6 +53,7 @@ function spaceTrim ($str) {
 </head>
 
 <body>
+  <!-- ヘッダーここから -->
   <header class="l-header">
     <div class="p-header">
       <div class="p-header__logo">
@@ -71,12 +76,16 @@ function spaceTrim ($str) {
       </button>
     </div>
   </header>
+  <!-- ヘッダーここまで -->
   <main class="l-main">
+    <!-- メインビジュアルここから -->
     <div class="p-main-visual">
       <div class="p-main-visual__catch">
         <p>Cresta Design.</p>
       </div>
     </div>
+    <!-- メインビジュアルここから -->
+    <!-- aboutコンテンツここから -->
     <div id="about" class="p-about">
       <div class="p-about__inner">
         <h2 class="c-text__section-title">About</h2>
@@ -89,12 +98,14 @@ function spaceTrim ($str) {
         </p>
       </div>
     </div>
+    <!-- aboutコンテンツここまで -->
+    <!-- serviceコンテンツここから -->
     <div id="service" class="p-service">
       <div class="p-service__inner">
         <h2 class="p-service__section-title c-text__section-title">Service</h2>
         <div class="p-service__container">
           <div class="p-service__text-container">
-            <h3 class="p-service__subtitle c-text__section-subtitle">
+            <h3 class="p-service__subtitle c-text__sectionSubTitle">
               リリース時のサポートで<br>
               サービスのブランディングを
             </h3>
@@ -122,6 +133,8 @@ function spaceTrim ($str) {
         </div>
       </div>
     </div>
+    <!-- serviceコンテンツここまで -->
+    <!-- newsコンテンツここから -->
     <div id="news" class="p-news">
       <div class="p-news__inner">
         <h2 class="c-text__section-title">News</h2>
@@ -153,6 +166,8 @@ function spaceTrim ($str) {
         </div>
       </div>
     </div>
+    <!-- newsコンテンツここまで -->
+    <!-- コンタクトフォームここから -->
     <div id="contact" class="p-contact">
       <div class="p-contact__inner">
         <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
@@ -180,7 +195,10 @@ function spaceTrim ($str) {
         </form>
       </div>
     </div>
+    <!-- コンタクトフォームここまで -->
   </main>
+  <!-- フッター読み込み -->
+  <!-- フッターここから -->
   <footer class="l-footer">
     <div class="p-footer">
       <div class="p-footer__inner">
@@ -188,6 +206,7 @@ function spaceTrim ($str) {
       </div>
     </div>
   </footer>
+  <!-- フッターここまで -->
   <!-- jQuery -->
   <script src="./js/jQuery/jquery-3.5.0.min.js"></script>
   <script src="./js/main.js"></script>

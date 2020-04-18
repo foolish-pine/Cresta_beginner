@@ -1,3 +1,4 @@
+<!-- コンタクトフォーム用PHPここから -->
 <?php
 session_start();
 
@@ -121,9 +122,13 @@ function validation($data)
   return $error;
 }
 ?>
+<!-- コンタクトフォーム用PHPここまで -->
 
+<!-- 相対パス -->
 
+<!-- ナビゲーションリンクのパス -->
 
+<!-- ヘッダー読み込み -->
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -142,6 +147,7 @@ function validation($data)
 </head>
 
 <body>
+  <!-- ヘッダーここから -->
   <header class="l-header">
     <div class="p-header">
       <div class="p-header__logo">
@@ -164,10 +170,11 @@ function validation($data)
       </button>
     </div>
   </header>
+  <!-- ヘッダーここまで -->
   <main class="l-main">
     <div id="contact" class="p-contact">
       <div class="p-contact__inner">
-        <!-- お問い合わせフォーム入力ページ -->
+        <!-- お問い合わせフォーム入力ページここから -->
         <?php if ($page_flag === 0) : ?>
         <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
         <?php if (!empty($error)): ?>
@@ -199,7 +206,8 @@ function validation($data)
             <input type="submit" name="confirmation" value="確認画面へ">
           </div>
         </form>
-        <!-- お問い合わせフォーム確認ページ -->
+        <!-- お問い合わせフォーム入力ページここまで -->
+        <!-- お問い合わせフォーム確認ページここから -->
         <?php elseif ($page_flag === 1) : ?>
         <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
         <p class="p-contact__text--confirmation c-text">以下の内容で送信します。よろしいですか？<br>※利用者宛と管理者宛のメールが入力されたメールアドレスに送信されます。</p>
@@ -241,16 +249,20 @@ function validation($data)
           <input type="hidden" name="email" value="<?php echo $clean['email'] ?>">
           <input type="hidden" name="message" value="<?php echo $clean['message'] ?>">
         </form>
-        <!-- お問い合わせフォーム完了ページ -->
+        <!-- お問い合わせフォーム確認ページここまで -->
+        <!-- お問い合わせフォーム完了ページここから -->
         <?php elseif ($page_flag === 2) : ?>
         <h2 class="p-contact__section-title c-text__section-title">送信が完了しました。</h2>
         <div class="p-contact__button c-button--top">
           <a href="../index.php">トップへ戻る</a>
         </div>
         <?php endif; ?>
+        <!-- お問い合わせフォーム完了ページここまで -->
       </div>
     </div>
   </main>
+  <!-- フッター読み込み -->
+  <!-- フッターここから -->
   <footer class="l-footer">
     <div class="p-footer">
       <div class="p-footer__inner">
@@ -258,6 +270,7 @@ function validation($data)
       </div>
     </div>
   </footer>
+  <!-- フッターここまで -->
   <!-- jQuery -->
   <script src="../js/jQuery/jquery-3.5.0.min.js"></script>
   <script src="../js/main.js"></script>

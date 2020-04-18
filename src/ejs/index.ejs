@@ -1,3 +1,4 @@
+<!-- コンタクトフォーム用PHPここから -->
 <?php
 session_start();
 
@@ -26,18 +27,24 @@ function spaceTrim ($str) {
   $str = preg_replace('/[ 　]+$/u', '', $str);
   return $str;
 }
-
 ?>
+<!-- コンタクトフォーム用PHPここまで -->
 
+<!-- 相対パス -->
 <% path = '.'; %>
+<!-- ナビゲーションリンクのパス -->
 <% scrollPath = ''; %>
+<!-- ヘッダー読み込み -->
 <%- include('common/_header'); %>
 <main class="l-main">
+  <!-- メインビジュアルここから -->
   <div class="p-main-visual">
     <div class="p-main-visual__catch">
       <p>Cresta Design.</p>
     </div>
   </div>
+  <!-- メインビジュアルここから -->
+  <!-- aboutコンテンツここから -->
   <div id="about" class="p-about">
     <div class="p-about__inner">
       <h2 class="c-text__section-title">About</h2>
@@ -50,6 +57,8 @@ function spaceTrim ($str) {
       </p>
     </div>
   </div>
+  <!-- aboutコンテンツここまで -->
+  <!-- serviceコンテンツここから -->
   <div id="service" class="p-service">
     <div class="p-service__inner">
       <h2 class="p-service__section-title c-text__section-title">Service</h2>
@@ -83,6 +92,8 @@ function spaceTrim ($str) {
       </div>
     </div>
   </div>
+  <!-- serviceコンテンツここまで -->
+  <!-- newsコンテンツここから -->
   <div id="news" class="p-news">
     <div class="p-news__inner">
       <h2 class="c-text__section-title">News</h2>
@@ -114,6 +125,8 @@ function spaceTrim ($str) {
       </div>
     </div>
   </div>
+  <!-- newsコンテンツここまで -->
+  <!-- コンタクトフォームここから -->
   <div id="contact" class="p-contact">
     <div class="p-contact__inner">
       <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
@@ -141,5 +154,7 @@ function spaceTrim ($str) {
       </form>
     </div>
   </div>
+  <!-- コンタクトフォームここまで -->
 </main>
+<!-- フッター読み込み -->
 <%- include('common/_footer'); %>

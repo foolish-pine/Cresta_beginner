@@ -13,7 +13,7 @@
     margin-bottom: 70px;
     font-size: 3.6rem;
     font-weight: 500;
-    color: $color-text-sectionTitle;
+    color: $color-text-section-title;
     text-align: center;
     letter-spacing: 0.05em;
   }
@@ -23,7 +23,7 @@
     font-size: 2rem;
     font-weight: 700;
     line-height: 2;
-    color: $color-text-sectionSubTitle;
+    color: $color-text-section-subtitle;
     letter-spacing: 0.1em;
 
     @include mq(pc) {

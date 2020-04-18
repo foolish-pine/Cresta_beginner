@@ -347,11 +347,11 @@ button:focus {
 }
 
 .c-alert--error {
-  background-color: #f44336;
+  background: #f44336;
 }
 
 .c-alert--success {
-  background-color: #4caf50;
+  background: #4caf50;
 }
 
 /* ===================================================================
@@ -377,7 +377,7 @@ button:focus {
 
 .c-button--default, .c-button--top {
   color: #fff;
-  background-color: #1b1310;
+  background: #1b1310;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
 }
@@ -386,7 +386,7 @@ button:focus {
   .c-button--default:hover, .c-button--top:hover {
     font-weight: 700;
     color: #1b1310;
-    background-color: #fff;
+    background: #fff;
     -webkit-transition: all 0.4s;
     transition: all 0.4s;
   }
@@ -394,14 +394,14 @@ button:focus {
 
 .c-button--back {
   color: #1b1310;
-  background-color: #fff;
+  background: #fff;
 }
 
 @media print, screen and (min-width: 768px) {
   .c-button--back:hover {
     font-weight: 700;
     color: #1b1310;
-    background-color: #fff;
+    background: #fff;
   }
 }
 
@@ -484,7 +484,7 @@ button:focus {
   プロジェクト
 ================================================================ */
 /* ================================================================
-  About
+  aboutコンテンツ
    ================================================================ */
 .p-about {
   padding-top: 100px;
@@ -502,7 +502,7 @@ button:focus {
 }
 
 /* ================================================================
-  Contact
+  コンタクトフォーム
    ================================================================ */
 .p-contact {
   padding-top: 97px;
@@ -549,7 +549,7 @@ button:focus {
   width: 100%;
   margin-bottom: 22px;
   line-height: 2;
-  background-color: #f5f5f5;
+  background: #f5f5f5;
   border: solid 1px #141414;
 }
 
@@ -580,7 +580,7 @@ button:focus {
   min-height: 171px;
   margin-bottom: 27px;
   line-height: 1.5;
-  background-color: #f5f5f5;
+  background: #f5f5f5;
   border: solid 1px #141414;
 }
 
@@ -615,7 +615,7 @@ button:focus {
   width: 100%;
   height: 60px;
   margin: 0 auto;
-  background-color: #1b1310;
+  background: #1b1310;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -685,7 +685,7 @@ button:focus {
   z-index: 100;
   display: none;
   width: 100vw;
-  background-color: #1b1310;
+  background: #1b1310;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -694,7 +694,7 @@ button:focus {
     right: 120px;
     display: block;
     width: auto;
-    background-color: transparent;
+    background: transparent;
   }
 }
 
@@ -715,7 +715,6 @@ button:focus {
   height: 100vh;
   overflow: auto;
   list-style: none;
-  -webkit-overflow-scrolling: touch;
 }
 
 @media print, screen and (min-width: 768px) {
@@ -778,7 +777,7 @@ button:focus {
   right: 0;
   width: 25px;
   height: 2px;
-  background-color: #fff;
+  background: #fff;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
   transition: transform 0.3s;
@@ -820,17 +819,14 @@ button:focus {
 .p-main-visual {
   position: relative;
   height: 590px;
-  background-image: url(../img/fv-bgi_sp@2x.jpg);
-  background-position: center;
-  background-size: cover;
+  background: url(../img/fv-bgi_sp@2x.jpg) center/cover;
 }
 
 @media print, screen and (min-width: 768px) {
   .p-main-visual {
     height: 740px;
     margin: 0 auto;
-    background-image: url(../img/fv-bgi@2x.jpg);
-    background-position: center bottom;
+    background: url(../img/fv-bgi@2x.jpg) center bottom;
   }
 }
 
@@ -872,7 +868,7 @@ button:focus {
 }
 
 /* ================================================================
-  News
+  newsコンテンツ
    ================================================================ */
 .p-news {
   padding-top: 106px;
@@ -908,7 +904,7 @@ button:focus {
 }
 
 /* ================================================================
-  Service
+  serviceコンテンツ
    ================================================================ */
 .p-service {
   padding-top: 160px;

@@ -5,15 +5,12 @@
 .p-main-visual {
   position: relative;
   height: 590px;
-  background-image: url(../img/fv-bgi_sp@2x.jpg);
-  background-position: center;
-  background-size: cover;
+  background: url(../img/fv-bgi_sp@2x.jpg) center / cover;
 
   @include mq(pc) {
     height: 740px;
     margin: 0 auto;
-    background-image: url(../img/fv-bgi@2x.jpg);
-    background-position: center bottom;
+    background: url(../img/fv-bgi@2x.jpg) center bottom;
   }
 
   &__catch {

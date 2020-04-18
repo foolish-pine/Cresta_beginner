@@ -23,14 +23,14 @@
   @extend %c-button;
 
   color: #fff;
-  background-color: $color-button-bg;
+  background: $color-button-bg;
   transition: all 0.4s;
 
   @include mq(pc) {
     &:hover {
       font-weight: 700;
       color: $color-button-text-hover;
-      background-color: #fff;
+      background: #fff;
       transition: all 0.4s;
     }
   }
@@ -40,13 +40,13 @@
   @extend %c-button;
 
   color: $color-button-text-hover;
-  background-color: #fff;
+  background: #fff;
 
   @include mq(pc) {
     &:hover {
       font-weight: 700;
       color: $color-button-text-hover;
-      background-color: #fff;
+      background: #fff;
     }
   }
 }

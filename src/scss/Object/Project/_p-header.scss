@@ -37,14 +37,14 @@
     z-index: 100;
     display: none;
     width: 100vw;
-    background-color: $color-header-bg;
+    background: $color-header-bg;
 
     @include mq(pc) {
       top: 30px;
       right: 120px;
       display: block;
       width: auto;
-      background-color: transparent;
+      background: transparent;
     }
   }
 
@@ -56,7 +56,6 @@
     height: 100vh;
     overflow: auto;
     list-style: none;
-    -webkit-overflow-scrolling: touch;
 
     @include mq(pc) {
       flex-direction: unset;
@@ -107,7 +106,7 @@
     right: 0;
     width: 25px;
     height: 2px;
-    background-color: #fff;
+    background: #fff;
     transition: transform 0.3s;
 
     &:first-child {
