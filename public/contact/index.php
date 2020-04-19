@@ -124,11 +124,11 @@ function validation($data)
 ?>
 <!-- コンタクトフォーム用PHPここまで -->
 
-<!-- 相対パス -->
 
-<!-- ナビゲーションリンクのパス -->
 
-<!-- ヘッダー読み込み -->
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -261,7 +261,7 @@ function validation($data)
       </div>
     </div>
   </main>
-  <!-- フッター読み込み -->
+
   <!-- フッターここから -->
   <footer class="l-footer">
     <div class="p-footer">
