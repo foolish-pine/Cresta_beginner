@@ -28,8 +28,4 @@ HTML / CSS / Sass / JavaScript(jQuery) / PHP / gulp / Adobe XD / Visual Studio C
 <br>
 
 ## スクリーンショット
-<br>
-<br>
 <img src="https://github.com/foolish-pine/Cresta_beginner/blob/master/src/img/cresta1_pc.png?raw=true" width=300px> <img src="https://github.com/foolish-pine/Cresta_beginner/blob/master/src/img/cresta1_sp.png?raw=true" width=300px>
-<br>
-<br>
