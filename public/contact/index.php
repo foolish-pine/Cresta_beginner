@@ -163,10 +163,10 @@ function validation($data)
           <li class="p-header__item"><a class="js-smoothscroll" href="../index.php#contact">Contact</a></li>
         </ul>
       </nav>
-      <button class="p-header__menu">
-        <span class="p-header__menu-line"></span>
-        <span class="p-header__menu-line"></span>
-        <span class="p-header__menu-line"></span>
+      <button class="p-header__menu js-hamburger-menu">
+        <span class="p-header__menu-line js-hamburger-menu-line"></span>
+        <span class="p-header__menu-line js-hamburger-menu-line"></span>
+        <span class="p-header__menu-line js-hamburger-menu-line"></span>
       </button>
     </div>
   </header>

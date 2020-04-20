@@ -10,8 +10,8 @@ $(function () {
 
   var $header = $(".p-header"),
     $headerNav = $(".p-header__nav"),
-    $headerMenu = $(".p-header__menu"),
-    $headerMenuLine = $(".p-header__menu-line");
+    $hamburgerMenu = $(".js-hamburger-menu"),
+    $hamburgerMenuLine = $(".js-hamburger-menu-line");
 
   $(window).on("resize", function () {
     if (mq.matches) {
@@ -19,7 +19,7 @@ $(function () {
       // navを非表示にする
       $headerNav.hide();
       // メニューアイコンを非activeにする
-      $headerMenuLine.removeClass("active");
+      $hamburgerMenuLine.removeClass("active");
     } else {
       // 画面幅768px以上のとき
       // navを表示させる
@@ -28,15 +28,15 @@ $(function () {
   });
 
   // メニューアイコンをクリックしてnavを開閉する
-  $headerMenu.on("click", function () {
-    $headerMenuLine.stop(true).toggleClass("active");
+  $hamburgerMenu.on("click", function () {
+    $hamburgerMenuLine.stop(true).toggleClass("active");
     $headerNav.stop(true).fadeToggle();
   });
 
   // ナビの余白クリックでメニュー閉じる
   $headerNav.on("click", function () {
-    if ($headerMenuLine.hasClass("active")) {
-      $headerMenuLine.stop(true).toggleClass("active");
+    if ($hamburgerMenuLine.hasClass("active")) {
+      $hamburgerMenuLine.stop(true).toggleClass("active");
       $headerNav.stop(true).fadeToggle();
     }
   });
