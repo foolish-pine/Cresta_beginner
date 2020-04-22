@@ -53,4 +53,34 @@ $(function () {
       position = target.offset().top - headerHeight; // ヘッダーの高さ分スクロール量を減らす
     $("html, body").animate({ scrollTop: position }, speed);
   });
+
+  // ---------------------------------------------
+  // スクロールフェードイン
+  // ---------------------------------------------
+
+  var effect_move = 50, // どのぐらい要素を動かすか(px)
+    effect_time = 800; // エフェクトの時間(ms) 1秒なら1000
+
+  // フェードする前のcssを定義
+  $(".js-scroll-fadein").css({
+    opacity: 0,
+    transform: "translateY(" + effect_move + "px)",
+    transition: effect_time + "ms",
+  });
+
+  // スクロールまたはロードするたびに実行
+  $(window).on("scroll load", function () {
+    var windowBtm = $(this).scrollTop() + $(this).height();
+
+    // 要素が可視範囲に入ったとき、エフェクトが発動
+    $(".js-scroll-fadein").each(function () {
+      var thisPos = $(this).offset().top;
+      if (windowBtm > thisPos) {
+        $(this).css({
+          opacity: 1,
+          transform: "translateY(0)",
+        });
+      }
+    });
+  });
 });
