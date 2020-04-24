@@ -66,24 +66,21 @@ $(function () {
   $(".js-scroll-fadein").css({
     opacity: 0,
     transform: "translateY(" + effect_move + "px)",
-    transition: effect_time + "ms",
   });
 
   // スクロールまたはロードするたびに実行
   $(window).on("scroll load", function () {
     var scrollBtm = $(this).scrollTop() + $(this).height(),
       threshold = scrollBtm - effect_pos;
-    console.log(scrollBtm);
-    console.log(threshold);
 
     // 要素が可視範囲に入ったとき、エフェクトが発動
     $(".js-scroll-fadein").each(function () {
       var thisPos = $(this).offset().top;
-      console.log(thisPos);
       if (threshold > thisPos) {
         $(this).css({
           opacity: 1,
           transform: "translateY(0)",
+          transition: effect_time + "ms",
         });
       }
     });
