@@ -58,7 +58,8 @@ $(function () {
   // スクロールフェードイン
   // ---------------------------------------------
 
-  var effect_move = 100, // どのぐらい要素を動かすか(px)
+  var effect_pos = 300, // 画面下からどの位置でフェードさせるか(px)
+    effect_move = 50, // どのぐらい要素を動かすか(px)
     effect_time = 2000; // エフェクトの時間(ms) 1秒なら1000
 
   // フェードする前のcssを定義
@@ -70,12 +71,16 @@ $(function () {
 
   // スクロールまたはロードするたびに実行
   $(window).on("scroll load", function () {
-    var windowBtm = $(this).scrollTop() + $(this).height();
+    var scrollBtm = $(this).scrollTop() + $(this).height(),
+      threshold = scrollBtm - effect_pos;
+    console.log(scrollBtm);
+    console.log(threshold);
 
     // 要素が可視範囲に入ったとき、エフェクトが発動
     $(".js-scroll-fadein").each(function () {
       var thisPos = $(this).offset().top;
-      if (windowBtm > thisPos) {
+      console.log(thisPos);
+      if (threshold > thisPos) {
         $(this).css({
           opacity: 1,
           transform: "translateY(0)",
