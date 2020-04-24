@@ -77,6 +77,7 @@ function spaceTrim ($str) {
     </div>
   </header>
   <!-- ヘッダーここまで -->
+  <!-- メインここから -->
   <main class="l-main">
     <!-- メインビジュアルここから -->
     <div class="p-main-visual">
@@ -197,6 +198,7 @@ function spaceTrim ($str) {
     </div>
     <!-- コンタクトフォームここまで -->
   </main>
+  <!-- メインここまで -->
 
   <!-- フッターここから -->
   <footer class="l-footer">
