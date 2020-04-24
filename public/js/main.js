@@ -58,20 +58,20 @@ $(function () {
   // スクロールフェードイン
   // ---------------------------------------------
 
-  var effect_pos = 300, // 画面下からどの位置でフェードさせるか(px)
-    effect_move = 50, // どのぐらい要素を動かすか(px)
-    effect_time = 2000; // エフェクトの時間(ms) 1秒なら1000
+  var effectPos = 300, // 画面下からどの位置でフェードさせるか(px)
+    effectMove = 50, // どのぐらい要素を動かすか(px)
+    effectTime = 2000; // エフェクトの時間(ms) 1秒なら1000
 
   // フェードする前のcssを定義
   $(".js-scroll-fadein").css({
     opacity: 0,
-    transform: "translateY(" + effect_move + "px)",
+    transform: `translateY(${effectMove}px)`,
   });
 
   // スクロールまたはロードするたびに実行
   $(window).on("scroll load", function () {
     var scrollBtm = $(this).scrollTop() + $(this).height(),
-      threshold = scrollBtm - effect_pos;
+      threshold = scrollBtm - effectPos;
 
     // 要素が可視範囲に入ったとき、エフェクトが発動
     $(".js-scroll-fadein").each(function () {
@@ -80,7 +80,7 @@ $(function () {
         $(this).css({
           opacity: 1,
           transform: "translateY(0)",
-          transition: effect_time + "ms",
+          transition: `${effectTime}ms`,
         });
       }
     });
