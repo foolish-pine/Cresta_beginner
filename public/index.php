@@ -4,29 +4,13 @@ session_start();
 
 // クリックジャッキング対策
 header('X-FRAME-OPTIONS: SAMEORIGIN');
-$clean = array();
-$error = array();
 
 // トークン生成
-if (!isset($_SESSION['token'])) {
-  $_SESSION['token'] = sha1(random_bytes(30));
+if (!isset($token)) {
+  $token = sha1(random_bytes(30));
+  $_SESSION['token'] = $token;
 }
 
-// サニタイズ
-if(!empty($_POST)) {
-  foreach($_POST as $key => $value) {
-    $clean[$key] = htmlspecialchars($value, ENT_QUOTES,'UTF-8');
-  }
-}
-
-// 前後にある半角全角スペースを削除する関数
-function spaceTrim ($str) {
-  // 行頭
-  $str = preg_replace('/^[ 　]+/u', '', $str);
-  // 末尾
-  $str = preg_replace('/[ 　]+$/u', '', $str);
-  return $str;
-}
 ?>
 <!-- コンタクトフォーム用PHPここまで -->
 
@@ -89,8 +73,8 @@ function spaceTrim ($str) {
     <!-- aboutコンテンツここから -->
     <div id="about" class="p-about">
       <div class="p-about__inner">
-        <h2 class="c-text__section-title">About</h2>
-        <h3 class="c-text__section-subtitle">
+        <h2 class="c-text__section-heading">About</h2>
+        <h3 class="c-text__section-sub-heading">
           ミニマルで<br>
           洗練されたデザインを。
         </h3>
@@ -103,10 +87,10 @@ function spaceTrim ($str) {
     <!-- serviceコンテンツここから -->
     <div id="service" class="p-service">
       <div class="p-service__inner">
-        <h2 class="p-service__section-title c-text__section-title">Service</h2>
+        <h2 class="p-service__section-heading c-text__section-heading">Service</h2>
         <div class="p-service__container">
           <div class="p-service__text-container">
-            <h3 class="p-service__subtitle c-text__section-subtitle">
+            <h3 class="p-service__sub-heading c-text__section-sub-heading">
               リリース時のサポートで<br>
               サービスのブランディングを
             </h3>
@@ -120,7 +104,7 @@ function spaceTrim ($str) {
         </div>
         <div class="p-service__container">
           <div class="p-service__text-container">
-            <h3 class="p-service__subtitle c-text__section-subtitle">
+            <h3 class="p-service__sub-heading c-text__section-sub-heading">
               リリース後のサポートで<br>
               効果を最大化させる
             </h3>
@@ -138,7 +122,7 @@ function spaceTrim ($str) {
     <!-- newsコンテンツここから -->
     <div id="news" class="p-news">
       <div class="p-news__inner">
-        <h2 class="c-text__section-title">News</h2>
+        <h2 class="c-text__section-heading">News</h2>
         <div class="p-news__container">
           <div class="p-news__card c-card">
             <div class="c-card__image">
@@ -171,29 +155,47 @@ function spaceTrim ($str) {
     <!-- コンタクトフォームここから -->
     <div id="contact" class="p-contact">
       <div class="p-contact__inner">
-        <h2 class="p-contact__section-title c-text__section-title">お問い合わせ</h2>
-        <form action="contact/index.php" method="post">
-          <input type="hidden" name="token" value="<?= $_SESSION['token'] ?>">
-          <div>
-            <label for="name">担当者名</label><br>
-            <input class="p-contact__textbox" type="text" id="name" name="name" required />
-          </div>
-          <div>
-            <label for="tel">電話番号</label><br>
-            <input class="p-contact__textbox" type="text" id="tel" name="tel" required />
-          </div>
-          <div>
-            <label for="email">メールアドレス</label><br>
-            <input class="p-contact__textbox" type="text" id="email" name="email" required />
-          </div>
-          <div class="p-contact__textarea">
-            <label for="message">お問い合わせ内容</label><br>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-          <div class="p-contact__button c-button--default">
-            <input type="submit" name="confirmation" value="確認画面へ">
-          </div>
-        </form>
+        <h2 class="p-contact__section-heading c-text__section-heading">お問い合わせ</h2>
+        <div id="app">
+          <form method="post" action="contact/index.php" onsubmit="return (confirm('この内容で送信します。\nよろしいですか？'));">
+            <input type="hidden" name="token" value="<?= $token ?>">
+            <div class="p-contact__textbox-container">
+              <label class="p-contact__textbox-label" for="name">担当者名</label>
+              <span v-if="nameEmptyError" class="p-contact__error">「担当者名」は必ず入力してください。</span>
+              <span v-if="nameValidationError" class="p-contact__error">「担当者名」は20文字以内で入力してください。</span>
+              <div>
+                <input class="p-contact__textbox" type="text" id="name" name="name" v-model="name" :class="{'p-contact__textbox--error': nameEmptyError || nameValidationError}" @input="nameValidationCheck" @blur="nameEmptyCheck">
+              </div>
+            </div>
+            <div class="p-contact__textbox-container">
+              <label class="p-contact__textbox-label" for="tel">電話番号</label>
+              <span v-if="telEmptyError" class="p-contact__error">「電話番号」は必ず入力してください。</span>
+              <span v-if="telValidationError && !telEmptyError" class="p-contact__error">「電話番号」は
+                「-」を含む半角数字で入力してください。</span>
+              <div>
+                <input class="p-contact__textbox" type="text" id="tel" name="tel" v-model="tel" :class="{'p-contact__textbox--error': telEmptyError || telValidationError}" @input="telValidationCheck" @blur="telEmptyCheck">
+              </div>
+            </div>
+            <div class="p-contact__textbox-container">
+              <label class="p-contact__textbox-label" for="email">メールアドレス</label>
+              <span v-if="emailEmptyError" class="p-contact__error">「メールアドレス」は必ず入力してください。</span>
+              <span v-if="emailValidationError && !emailEmptyError" class="p-contact__error">「メールアドレス」は「＠」を含むものを入力してください。</span>
+              <div>
+                <input class="p-contact__textbox" type="text" id="email" name="email" v-model="email" :class="{'p-contact__textbox--error': emailEmptyError || emailValidationError}" @input="emailValidationCheck" @blur="emailEmptyCheck">
+              </div>
+            </div>
+            <div class="p-contact__textarea">
+              <label class="p-contact__textbox-label" for="message">お問い合わせ内容</label>
+              <span v-if="messageEmptyError" class="p-contact__error">「お問い合わせ内容」は必ず入力してください。</span>
+              <div>
+                <textarea id="message" name="message" v-model="message" :class="{'p-contact__textbox--error': messageEmptyError}" @input="messageEmptyCheck" @blur="messageEmptyCheck"></textarea>
+              </div>
+            </div>
+            <div :class="['p-contact__button', !enteredAll || !validatedAll ? 'c-button--inactive' : 'c-button--default']">
+              <input type="submit" name="confirmation" value="確認画面へ" :disabled="!(enteredAll && validatedAll)">
+            </div>
+          </form>
+        </div>
       </div>
     </div>
     <!-- コンタクトフォームここまで -->
@@ -211,6 +213,7 @@ function spaceTrim ($str) {
   <!-- フッターここまで -->
   <!-- jQuery -->
   <script src="./js/jQuery/jquery-3.5.0.min.js"></script>
+  <script src="./js/Vue.js/vue.min.js"></script>
   <script src="./js/main.js"></script>
 </body>
 

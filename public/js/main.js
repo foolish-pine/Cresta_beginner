@@ -1,14 +1,19 @@
 /* ================================================================
   javascript
    ================================================================ */
+"use strict";
+
+/* ================================================================
+  jQuery
+   ================================================================ */
 
 $(function () {
   // ---------------------------------------------
   // ハンバーガーメニュー
   // ---------------------------------------------
-  var mq = window.matchMedia("screen and (max-width:767px)");
+  const mq = window.matchMedia("screen and (max-width:767px)");
 
-  var $header = $(".p-header"),
+  const $header = $(".p-header"),
     $headerNav = $(".p-header__nav"),
     $hamburgerMenu = $(".js-hamburger-menu"),
     $hamburgerMenuLine = $(".js-hamburger-menu-line");
@@ -46,7 +51,7 @@ $(function () {
   // ---------------------------------------------
 
   $(".js-smoothscroll").click(function () {
-    var speed = 500,
+    const speed = 500,
       href = $(this).attr("href"),
       target = $(href == "#" || href == "" ? "html" : href),
       headerHeight = $header.outerHeight(),
@@ -58,7 +63,7 @@ $(function () {
   // スクロールフェードイン
   // ---------------------------------------------
 
-  var effectPos = 300, // 画面下からどの位置でフェードさせるか(px)
+  const effectPos = 300, // 画面下からどの位置でフェードさせるか(px)
     effectMove = 50, // どのぐらい要素を動かすか(px)
     effectTime = 2000; // エフェクトの時間(ms) 1秒なら1000
 
@@ -70,12 +75,12 @@ $(function () {
 
   // スクロールまたはロードするたびに実行
   $(window).on("scroll load", function () {
-    var scrollBtm = $(this).scrollTop() + $(this).height(),
+    const scrollBtm = $(this).scrollTop() + $(this).height(),
       threshold = scrollBtm - effectPos;
 
     // 要素が可視範囲に入ったとき、エフェクトが発動
     $(".js-scroll-fadein").each(function () {
-      var thisPos = $(this).offset().top;
+      const thisPos = $(this).offset().top;
       if (threshold > thisPos) {
         $(this).css({
           opacity: 1,
@@ -85,4 +90,91 @@ $(function () {
       }
     });
   });
+});
+
+var app = new Vue({
+  el: "#app",
+  data: {
+    name: "",
+    tel: "",
+    email: "",
+    message: "",
+    nameEmptyError: false,
+    telEmptyError: false,
+    emailEmptyError: false,
+    messageEmptyError: false,
+    nameValidationError: false,
+    telValidationError: false,
+    emailValidationError: false,
+  },
+  methods: {
+    nameEmptyCheck: function () {
+      if (this.name === "") {
+        this.nameEmptyError = true;
+      } else {
+        this.nameEmptyError = false;
+      }
+    },
+    nameValidationCheck: function () {
+      this.nameEmptyError = false;
+      if (this.name.length > 20) {
+        this.nameValidationError = true;
+      } else {
+        this.nameValidationError = false;
+      }
+    },
+    telEmptyCheck: function () {
+      if (this.tel === "") {
+        this.telEmptyError = true;
+      } else {
+        this.telEmptyError = false;
+      }
+    },
+    telValidationCheck: function () {
+      this.telEmptyError = false;
+      var telPattern = /^0\d{1,4}-\d{1,4}-\d{3,4}$/;
+      if (!telPattern.test(this.tel)) {
+        this.telValidationError = true;
+      } else {
+        this.telValidationError = false;
+      }
+    },
+    emailEmptyCheck: function () {
+      if (this.email === "") {
+        this.emailEmptyError = true;
+      } else {
+        this.emailEmptyError = false;
+      }
+    },
+    emailValidationCheck: function () {
+      this.emailEmptyError = false;
+      var emailPattern = /^.*@.*/;
+      if (emailPattern.test(this.email)) {
+        this.emailValidationError = false;
+      } else {
+        this.emailValidationError = true;
+      }
+    },
+    messageEmptyCheck: function () {
+      if (this.message === "") {
+        this.messageEmptyError = true;
+      } else {
+        this.messageEmptyError = false;
+      }
+    },
+  },
+  computed: {
+    enteredAll() {
+      var requiredFields = [this.name, this.tel, this.email, this.message];
+      return requiredFields.indexOf("") === -1;
+    },
+    validatedAll() {
+      var validatedValue = [
+        this.nameValidationError,
+        this.telValidationError,
+        this.emailValidationError,
+      ];
+      return validatedValue.indexOf(true) === -1;
+    },
+  },
 });

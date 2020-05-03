@@ -19,21 +19,12 @@
   }
 }
 
-.c-button--default {
+.c-button--inactive {
   @extend %c-button;
 
   color: #fff;
   background: $color-button-bg;
-  transition: all 0.4s;
-
-  @include mq(pc) {
-    &:hover {
-      font-weight: 700;
-      color: $color-button-text-hover;
-      background: #fff;
-      transition: all 0.4s;
-    }
-  }
+  opacity: 0.4;
 }
 
 .c-button--back {
@@ -47,6 +38,23 @@
       font-weight: 700;
       color: $color-button-text-hover;
       background: #fff;
+    }
+  }
+}
+
+.c-button--default {
+  @extend %c-button;
+
+  color: #fff;
+  background: $color-button-bg;
+  transition: all 0.4s;
+
+  @include mq(pc) {
+    &:hover {
+      font-weight: 700;
+      color: $color-button-text-hover;
+      background: #fff;
+      transition: all 0.4s;
     }
   }
 }
