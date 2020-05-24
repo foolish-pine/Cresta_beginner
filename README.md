@@ -32,6 +32,7 @@ HTML / CSS / Sass / JavaScript(jQuery, Vue.js) / PHP / Gulp / Adobe XD
 - レスポンシブ対応あり(PC、SP)。
 - スティッキーヘッダー、フェードインをjQueryで実装しました。
 - お問い合わせフォームをPHPで、そのバリデーション機能をVue.jsで実装しました。
+<br>
 
 ## スクリーンショット
 <img src="https://github.com/foolish-pine/Cresta_beginner/blob/master/src/img/cresta1_pc.png?raw=true" height=700px> <img src="https://github.com/foolish-pine/Cresta_beginner/blob/master/src/img/cresta1_sp.png?raw=true" height=700px>
