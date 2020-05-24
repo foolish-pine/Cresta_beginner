@@ -8,7 +8,6 @@
 
 ご質問等は[制作者のTwitter](https://twitter.com/foolish_pine)へお願いします。<br>
 <br>
-<br>
 
 ## デザインデータについて
 このサイトのデザインデータは以下で配布されています。<br>
